@@ -42,6 +42,7 @@ Scenario: Dress accordingly For Cold Weather
 		And should put on Socks
 
 @integration
+@ignore
 Scenario: Duplicate DressOn 
 	Given the weather is "HOT"  
 	When I wear the following in the given order
@@ -80,6 +81,7 @@ Scenario: Dress with Jacket in Hot Weather
 		But the dressing should fail
 
 @integration
+@ignore
 Scenario: No Complete Dressing (miss to wear atleast one dressing) 
 	Given the weather is "COLD"  
 	When I wear the following in the given order
@@ -99,6 +101,7 @@ Scenario: No Complete Dressing (miss to wear atleast one dressing)
 		But the dressing should fail
 
 @integration
+@ignore
 Scenario: Dress without PajamasOff
 	Given the weather is "HOT"  
 	When I wear the following in the given order
