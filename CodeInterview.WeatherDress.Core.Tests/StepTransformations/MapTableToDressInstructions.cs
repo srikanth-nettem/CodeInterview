@@ -46,6 +46,8 @@ namespace Weather.Dress.Core.Tests.StepTransformations
                     return new HeadwearInstruction(weatherTypeMock);
                 case DressCommand.FootwearOn:
                     return new FootwearInstruction(weatherTypeMock);
+                case DressCommand.LeaveHouse:
+                    return new LeaveHouseInstruction(weatherTypeMock);
                 default:
                     throw new Exception("Invalid Command");
             }

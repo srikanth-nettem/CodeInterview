@@ -13,6 +13,7 @@ Scenario: Dress accordingly For Hot Weather
 	| ShirtOn     |
 	| HeadwearOn  |
 	| FootwearOn  |
+	| LeaveHouse  |
 	Then I can leave house
 		But shirt I put on should be "shirt"
 		And pants I put on should be "shorts"
@@ -30,9 +31,12 @@ Scenario: Dress accordingly For Cold Weather
 	| ShirtOn     |
 	| HeadwearOn  |
 	| JacketOn    |
-	| FootwearOn    |
+	| FootwearOn  |
+	| LeaveHouse  |
 	Then I can leave house
 		But shirt I put on should be "t-shirt"
 		And pants I put on should be "pants"
 		And headwear should be "hat"
 		And footweear should be "boots"
+		And should put on Jacket
+		And should put on Socks

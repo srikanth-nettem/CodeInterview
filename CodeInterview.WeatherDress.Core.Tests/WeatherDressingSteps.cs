@@ -13,11 +13,10 @@ namespace CodeInterview.WeatherDress.Core.Tests
     {
         IWeatherType _weatherType;
         IWriter _writerMock;
-        ArrayList dressed;
+        List<string> dressed;
 
         public WeatherDressingSteps()
         {
-
             _writerMock = Substitute.For<IWriter>();
             _writerMock.When(writer => writer.Write(Arg.Any<string>())).Do(callinfo =>
             {
@@ -28,7 +27,7 @@ namespace CodeInterview.WeatherDress.Core.Tests
         [Given(@"the weather is ""(.*)""")]
         public void GivenTheWeatherIs(WeatherEnum weather)
         {
-            dressed = new ArrayList();
+            dressed = new List<string>();
 
             switch (weather)
             {
@@ -45,6 +44,7 @@ namespace CodeInterview.WeatherDress.Core.Tests
 
             ScenarioContext.Current.Add("WeatherType", _weatherType);
         }
+
         [When(@"I wear the following in the given order")]
         public void WhenIWearTheFollowing(IEnumerable<IInstruction> instructions)
         {
@@ -57,32 +57,45 @@ namespace CodeInterview.WeatherDress.Core.Tests
         [Then(@"I can leave house")]
         public void ThenICanLeaveHouse()
         {
-            //Assert.True(dressed.Contains("leaving house"));
+            Assert.Contains("leaving house", dressed);
         }
 
         [Then(@"shirt I put on should be ""(.*)""")]
         public void ThenShirtIPutOnShouldBe(string shirtType)
         {
-            Assert.True(dressed.Contains(shirtType));
+            Assert.Contains<string>(shirtType, dressed);
         }
 
         [Then(@"pants I put on should be ""(.*)""")]
         public void ThenPantsIPutOnShouldBe(string pantsType)
         {
-            Assert.True(dressed.Contains(pantsType));
+            Assert.Contains<string>(pantsType, dressed);
 
         }
 
         [Then(@"headwear should be ""(.*)""")]
         public void ThenHeadwearShouldBe(string headwearType)
         {
-            dressed.Contains(headwearType);
+            Assert.Contains<string>(headwearType, dressed);
         }
 
         [Then(@"footweear should be ""(.*)""")]
         public void ThenFootweearShouldBe(string footwearType)
         {
-            dressed.Contains(footwearType);
+            Assert.Contains<string>(footwearType, dressed);
         }
+
+        [Then(@"should put on Jacket")]
+        public void ThenShouldPutOnJacket()
+        {
+            Assert.Contains<string>("jacket", dressed);
+        }
+
+        [Then(@"should put on Socks")]
+        public void ThenShouldPutOnSocks()
+        {
+            Assert.Contains<string>("socks", dressed);
+        }
+
     }
 }

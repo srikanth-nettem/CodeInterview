@@ -97,17 +97,19 @@ this.ScenarioSetup(scenarioInfo);
                         "HeadwearOn"});
             table1.AddRow(new string[] {
                         "FootwearOn"});
+            table1.AddRow(new string[] {
+                        "LeaveHouse"});
 #line 9
  testRunner.When("I wear the following in the given order", ((string)(null)), table1, "When ");
-#line 16
- testRunner.Then("I can leave house", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 17
-  testRunner.But("shirt I put on should be \"shirt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
+ testRunner.Then("I can leave house", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 18
-  testRunner.And("pants I put on should be \"shorts\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.But("shirt I put on should be \"shirt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
 #line 19
-  testRunner.And("headwear should be \"sun visor\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("pants I put on should be \"shorts\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
+  testRunner.And("headwear should be \"sun visor\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 21
   testRunner.And("footweear should be \"sandals\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -121,9 +123,9 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dress accordingly For Cold Weather", new string[] {
                         "integration"});
-#line 23
-this.ScenarioSetup(scenarioInfo);
 #line 24
+this.ScenarioSetup(scenarioInfo);
+#line 25
  testRunner.Given("the weather is \"COLD\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -142,18 +144,24 @@ this.ScenarioSetup(scenarioInfo);
                         "JacketOn"});
             table2.AddRow(new string[] {
                         "FootwearOn"});
-#line 25
+            table2.AddRow(new string[] {
+                        "LeaveHouse"});
+#line 26
  testRunner.When("I wear the following in the given order", ((string)(null)), table2, "When ");
-#line 34
- testRunner.Then("I can leave house", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 35
-  testRunner.But("shirt I put on should be \"t-shirt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
 #line 36
-  testRunner.And("pants I put on should be \"pants\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("I can leave house", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 37
-  testRunner.And("headwear should be \"hat\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.But("shirt I put on should be \"t-shirt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
 #line 38
+  testRunner.And("pants I put on should be \"pants\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 39
+  testRunner.And("headwear should be \"hat\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 40
   testRunner.And("footweear should be \"boots\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 41
+  testRunner.And("should put on Jacket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 42
+  testRunner.And("should put on Socks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
