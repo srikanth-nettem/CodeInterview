@@ -1,7 +1,7 @@
 language: csharp
 solution: "./CodeInterview.sln"
 install:
-- travis_retry nuget restore -source "https://www.nuget.org/api/v2" ./CodeInterview.sln
+ - travis_retry nuget restore -source "https://www.nuget.org/api/v2" ./CodeInterview.sln
 script:
-- xbuild ./CodeInterview.sln
-- mono ./lib/xunit/xunit.console.clr4.x86.exe CodeInterview.WeatherDress.Core.Tests/bin/Debug/CodeInterview.WeatherDress.Core.Tests.dll
+ - xbuild ./CodeInterview.sln
+ - mono ./packages/xunit.runner.console.2.3.1/tools/net452/xunit.console.exe CodeInterview.WeatherDress.Core.Tests/bin/Debug/CodeInterview.WeatherDress.Core.Tests.dll
