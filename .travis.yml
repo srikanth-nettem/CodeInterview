@@ -4,4 +4,4 @@ install:
 - travis_retry nuget restore -source "https://www.nuget.org/api/v2" ./CodeInterview.sln
 script:
 - xbuild ./CodeInterview.sln
-- mono ./packages/xunit.runner.visualstudio.2.0.1/build/_common/xunit.runner.visualstudio.testadapter.dll ./CodeInterview.WeatherDress.Core.Tests/bin/Debug/CodeInterview.WeatherDress.Core.Tests.dll
+- mono ./lib/xunit/xunit.console.clr4.x86.exe CodeInterview.WeatherDress.Core.Tests/bin/Debug/CodeInterview.WeatherDress.Core.Tests.dll
