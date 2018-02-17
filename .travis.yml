@@ -1,7 +1,7 @@
 language: csharp
 solution: "./CodeInterview.sln"
 install:
-- travis_retry nuget restore -source "https://www.nuget.org/api/v2" ./Fibonacci/Fibonacci.sln
+- travis_retry nuget restore -source "https://www.nuget.org/api/v2" ./CodeInterview.sln
 script:
 - xbuild ./CodeInterview.sln
 - mono ./packages/xunit.runner.visualstudio.2.0.1/build/_common/xunit.runner.visualstudio.testadapter.dll ./CodeInterview.WeatherDress.Core.Tests/bin/Debug/CodeInterview.WeatherDress.Core.Tests.dll
