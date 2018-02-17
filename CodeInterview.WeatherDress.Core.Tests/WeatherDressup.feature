@@ -40,3 +40,72 @@ Scenario: Dress accordingly For Cold Weather
 		And footweear should be "boots"
 		And should put on Jacket
 		And should put on Socks
+
+@integration
+Scenario: Duplicate DressOn 
+	Given the weather is "HOT"  
+	When I wear the following in the given order
+	| Dress       |
+	| Pajamas_Off |
+	| PantsOn     |
+	| PantsOn     |
+	Then the dressing should fail
+
+@integration
+Scenario: Dress with Socks in Hot Weather
+	Given the weather is "HOT"  
+	When I wear the following in the given order
+	| Dress       |
+	| Pajamas_Off |
+	| PantsOn     |
+	| SocksOn     |
+	Then pants I put on should be "shorts"
+		But the dressing should fail
+
+@integration
+Scenario: Dress with Jacket in Hot Weather 
+	Given the weather is "HOT"  
+	When I wear the following in the given order
+	| Dress       |
+	| Pajamas_Off |
+	| PantsOn     |
+	| ShirtOn     |
+	| HeadwearOn  |
+	| JacketOn    |
+	| FootwearOn  |
+	| LeaveHouse  |
+	Then pants I put on should be "shorts"
+		And shirt I put on should be "shirt"
+		And headwear should be "sun visor"
+		But the dressing should fail
+
+@integration
+Scenario: No Complete Dressing (miss to wear atleast one dressing) 
+	Given the weather is "COLD"  
+	When I wear the following in the given order
+	| Dress       |
+	| Pajamas_Off |
+	| PantsOn     |
+	| SocksOn     |
+	| ShirtOn     |
+	| HeadwearOn  |
+	| JacketOn    |
+	| LeaveHouse  |
+	Then pants I put on should be "pants"
+		And should put on Socks
+		And shirt I put on should be "t-shirt"
+		And headwear should be "hat"
+		And should put on Jacket
+		But the dressing should fail
+
+@integration
+Scenario: Dress without PajamasOff
+	Given the weather is "HOT"  
+	When I wear the following in the given order
+	| Dress      |
+	| PantsOn    |
+	| ShirtOn    |
+	| HeadwearOn |
+	| FootwearOn |
+	| LeaveHouse |
+	Then the dressing should fail

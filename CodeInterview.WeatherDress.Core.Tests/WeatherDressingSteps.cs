@@ -1,5 +1,5 @@
 ﻿using NSubstitute;
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using TechTalk.SpecFlow;
 using Xunit;
@@ -11,9 +11,9 @@ namespace CodeInterview.WeatherDress.Core.Tests
     [Binding]
     public class WeatherDressingSteps
     {
-        IWeatherType _weatherType;
-        IWriter _writerMock;
-        List<string> dressed;
+       private IWeatherType _weatherType;
+       private IWriter _writerMock;
+       private List<string> dressed;
 
         public WeatherDressingSteps()
         {
@@ -28,7 +28,7 @@ namespace CodeInterview.WeatherDress.Core.Tests
         public void GivenTheWeatherIs(WeatherEnum weather)
         {
             dressed = new List<string>();
-
+            Console.WriteLine(dressed.ToArray());
             switch (weather)
             {
                 case WeatherEnum.HOT:
@@ -97,5 +97,10 @@ namespace CodeInterview.WeatherDress.Core.Tests
             Assert.Contains<string>("socks", dressed);
         }
 
+        [Then(@"the dressing should fail")]
+        public void ThenTheDressingShouldFail()
+        {
+            Assert.Contains("fail", dressed);
+        }
     }
 }

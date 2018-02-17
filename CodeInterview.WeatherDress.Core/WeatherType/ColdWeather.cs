@@ -8,7 +8,7 @@ namespace CodeInterview.WeatherDress.Core.WeatherType
 {
     public class ColdWeather:IWeatherType
     {
-        private IWriter _writer;
+        private readonly IWriter _writer;
         public ColdWeather(IWriter writer)
         {
             _writer = writer;

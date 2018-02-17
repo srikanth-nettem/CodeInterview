@@ -3,7 +3,7 @@ namespace CodeInterview.WeatherDress.Core.WeatherType
 {
     public class HotWeather:IWeatherType
     {
-        private IWriter _writer;
+        private readonly IWriter _writer;
         public HotWeather(IWriter writer)
         {
             _writer = writer;

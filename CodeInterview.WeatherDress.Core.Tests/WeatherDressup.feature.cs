@@ -166,6 +166,189 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
+        [Xunit.FactAttribute(DisplayName="Duplicate DressOn")]
+        [Xunit.TraitAttribute("FeatureTitle", "Weather Dressing")]
+        [Xunit.TraitAttribute("Description", "Duplicate DressOn")]
+        [Xunit.TraitAttribute("Category", "integration")]
+        public virtual void DuplicateDressOn()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Duplicate DressOn", new string[] {
+                        "integration"});
+#line 45
+this.ScenarioSetup(scenarioInfo);
+#line 46
+ testRunner.Given("the weather is \"HOT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Dress"});
+            table3.AddRow(new string[] {
+                        "Pajamas_Off"});
+            table3.AddRow(new string[] {
+                        "PantsOn"});
+            table3.AddRow(new string[] {
+                        "PantsOn"});
+#line 47
+ testRunner.When("I wear the following in the given order", ((string)(null)), table3, "When ");
+#line 52
+ testRunner.Then("the dressing should fail", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="Dress with Socks in Hot Weather")]
+        [Xunit.TraitAttribute("FeatureTitle", "Weather Dressing")]
+        [Xunit.TraitAttribute("Description", "Dress with Socks in Hot Weather")]
+        [Xunit.TraitAttribute("Category", "integration")]
+        public virtual void DressWithSocksInHotWeather()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dress with Socks in Hot Weather", new string[] {
+                        "integration"});
+#line 55
+this.ScenarioSetup(scenarioInfo);
+#line 56
+ testRunner.Given("the weather is \"HOT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Dress"});
+            table4.AddRow(new string[] {
+                        "Pajamas_Off"});
+            table4.AddRow(new string[] {
+                        "PantsOn"});
+            table4.AddRow(new string[] {
+                        "SocksOn"});
+#line 57
+ testRunner.When("I wear the following in the given order", ((string)(null)), table4, "When ");
+#line 62
+ testRunner.Then("pants I put on should be \"shorts\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 63
+  testRunner.But("the dressing should fail", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="Dress with Jacket in Hot Weather")]
+        [Xunit.TraitAttribute("FeatureTitle", "Weather Dressing")]
+        [Xunit.TraitAttribute("Description", "Dress with Jacket in Hot Weather")]
+        [Xunit.TraitAttribute("Category", "integration")]
+        public virtual void DressWithJacketInHotWeather()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dress with Jacket in Hot Weather", new string[] {
+                        "integration"});
+#line 66
+this.ScenarioSetup(scenarioInfo);
+#line 67
+ testRunner.Given("the weather is \"HOT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Dress"});
+            table5.AddRow(new string[] {
+                        "Pajamas_Off"});
+            table5.AddRow(new string[] {
+                        "PantsOn"});
+            table5.AddRow(new string[] {
+                        "ShirtOn"});
+            table5.AddRow(new string[] {
+                        "HeadwearOn"});
+            table5.AddRow(new string[] {
+                        "JacketOn"});
+            table5.AddRow(new string[] {
+                        "FootwearOn"});
+            table5.AddRow(new string[] {
+                        "LeaveHouse"});
+#line 68
+ testRunner.When("I wear the following in the given order", ((string)(null)), table5, "When ");
+#line 77
+ testRunner.Then("pants I put on should be \"shorts\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 78
+  testRunner.And("shirt I put on should be \"shirt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 79
+  testRunner.And("headwear should be \"sun visor\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 80
+  testRunner.But("the dressing should fail", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="No Complete Dressing (miss to wear atleast one dressing)")]
+        [Xunit.TraitAttribute("FeatureTitle", "Weather Dressing")]
+        [Xunit.TraitAttribute("Description", "No Complete Dressing (miss to wear atleast one dressing)")]
+        [Xunit.TraitAttribute("Category", "integration")]
+        public virtual void NoCompleteDressingMissToWearAtleastOneDressing()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("No Complete Dressing (miss to wear atleast one dressing)", new string[] {
+                        "integration"});
+#line 83
+this.ScenarioSetup(scenarioInfo);
+#line 84
+ testRunner.Given("the weather is \"COLD\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Dress"});
+            table6.AddRow(new string[] {
+                        "Pajamas_Off"});
+            table6.AddRow(new string[] {
+                        "PantsOn"});
+            table6.AddRow(new string[] {
+                        "SocksOn"});
+            table6.AddRow(new string[] {
+                        "ShirtOn"});
+            table6.AddRow(new string[] {
+                        "HeadwearOn"});
+            table6.AddRow(new string[] {
+                        "JacketOn"});
+            table6.AddRow(new string[] {
+                        "LeaveHouse"});
+#line 85
+ testRunner.When("I wear the following in the given order", ((string)(null)), table6, "When ");
+#line 94
+ testRunner.Then("pants I put on should be \"pants\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 95
+  testRunner.And("should put on Socks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 96
+  testRunner.And("shirt I put on should be \"t-shirt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 97
+  testRunner.And("headwear should be \"hat\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 98
+  testRunner.And("should put on Jacket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 99
+  testRunner.But("the dressing should fail", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="Dress without PajamasOff")]
+        [Xunit.TraitAttribute("FeatureTitle", "Weather Dressing")]
+        [Xunit.TraitAttribute("Description", "Dress without PajamasOff")]
+        [Xunit.TraitAttribute("Category", "integration")]
+        public virtual void DressWithoutPajamasOff()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dress without PajamasOff", new string[] {
+                        "integration"});
+#line 102
+this.ScenarioSetup(scenarioInfo);
+#line 103
+ testRunner.Given("the weather is \"HOT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Dress"});
+            table7.AddRow(new string[] {
+                        "PantsOn"});
+            table7.AddRow(new string[] {
+                        "ShirtOn"});
+            table7.AddRow(new string[] {
+                        "HeadwearOn"});
+            table7.AddRow(new string[] {
+                        "FootwearOn"});
+            table7.AddRow(new string[] {
+                        "LeaveHouse"});
+#line 104
+ testRunner.When("I wear the following in the given order", ((string)(null)), table7, "When ");
+#line 111
+ testRunner.Then("the dressing should fail", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.3.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable

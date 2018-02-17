@@ -12,6 +12,7 @@ namespace Weather.Dress.Core.Tests.StepTransformations
    [Binding]
     public class StepTransformations
     {
+       
         [StepArgumentTransformation]
         public IEnumerable<IInstruction> Dress(Table dressTable)    
         {
@@ -29,7 +30,7 @@ namespace Weather.Dress.Core.Tests.StepTransformations
 
         private IInstruction InstantiateDress(DressCommand dressCommand)
         {
-             IWeatherType weatherTypeMock = (IWeatherType)ScenarioContext.Current["WeatherType"];
+            IWeatherType weatherTypeMock = (IWeatherType)ScenarioContext.Current["WeatherType"];
             switch (dressCommand)
             {
                 case DressCommand.Pajamas_Off:
