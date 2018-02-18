@@ -9,7 +9,7 @@ namespace CodeInterview.WeatherDress.Core.Tests.WeatherType
     [Trait("Category", "unit")]
     public class HotWeatherTests
     {
-        private IWeatherType _hotWeather;
+        private readonly WeatherDressing _hotWeather;
         private readonly IWriter _writerMock;
         private readonly IDressValidator _dressValidator;
 

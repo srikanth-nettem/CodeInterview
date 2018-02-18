@@ -10,13 +10,13 @@ namespace CodeInterview.WeatherDress.Core.Tests.Instructions
     public class JacketInstructionTests
     {
         private IInstruction _jacketInstruction;
-        private readonly IWeatherType _weatherMock;
+        private readonly IWeatherDressing _weatherMock;
         private readonly IStateManager _stateManager;
 
         public JacketInstructionTests()
         {
             _stateManager = Substitute.For<IStateManager>();
-            _weatherMock = Substitute.For<IWeatherType>();
+            _weatherMock = Substitute.For<IWeatherDressing>();
             _jacketInstruction = new JacketInstruction(_weatherMock, _stateManager);
         }
 

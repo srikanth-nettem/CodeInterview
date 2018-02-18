@@ -3,55 +3,56 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CodeInterview.WeatherDress.Core.Validations;
 
 namespace CodeInterview.WeatherDress.Core.WeatherType
 {
-    public class ColdWeather:IWeatherType
+    public class ColdWeather:WeatherDressing
     {
-        private readonly IWriter _writer;
-        public ColdWeather(IWriter writer)
+        public ColdWeather(IWriter writer, IDressValidator dressValidator) : base(writer, dressValidator)
         {
-            _writer = writer;
         }
 
-        public void PutOnShirt()
+        public override void PutOnShirt()
         {
-            _writer.Write("t-shirt");
+            validateDress(DressCommand.ShirtOn,
+            () => _writer.Write("t-shirt"));
         }
 
-        public void PutOnPants()
+        public override void PutOnPants()
         {
-            _writer.Write("pants");
+            validateDress(DressCommand.ShirtOn,
+            () => _writer.Write("pants"));
         }
 
-        public void PutOnHeadwear()
+        public override void PutOnHeadwear()
         {
-            _writer.Write("hat");
+            validateDress(DressCommand.ShirtOn,
+            () => _writer.Write("hat"));
         }
 
-        public void PutOnFootwear()
+        public override void PutOnFootwear()
         {
-            _writer.Write("boots");
+            validateDress(DressCommand.ShirtOn,
+            () => _writer.Write("boots"));
         }
 
-        public void PutOnJacket()
+        public override void PutOnJacket()
         {
-            _writer.Write("jacket");
+            validateDress(DressCommand.ShirtOn,
+            () => _writer.Write("jacket"));
         }
 
-        public void PutOnSocks()
+        public override void PutOnSocks()
         {
-            _writer.Write("socks");
+            validateDress(DressCommand.ShirtOn,
+            () => _writer.Write("socks"));
         }
 
-        public void TakeOffPajamas()
+        public override void LeaveHouse()
         {
-            _writer.Write("Removing PJs");
-        }
-
-        public void LeaveHouse()
-        {
-            _writer.Write("leaving house");
+            validateDress(DressCommand.ShirtOn,
+            () => _writer.Write("leaving house"));
         }
     }
 }

@@ -32,7 +32,7 @@ namespace Weather.Dress.Core.Tests.StepTransformations
         private IInstruction InstantiateDress(DressCommand dressCommand)
         {
             IStateManager stateManager = (IStateManager)ScenarioContext.Current["DressState"];
-            IWeatherType weatherTypeMock = (IWeatherType)ScenarioContext.Current["WeatherType"];
+            WeatherDressing weatherTypeMock = (WeatherDressing)ScenarioContext.Current["WeatherType"];
             switch (dressCommand)
             {
                 case DressCommand.Pajamas_Off:

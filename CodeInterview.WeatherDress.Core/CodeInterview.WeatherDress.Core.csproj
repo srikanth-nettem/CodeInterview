@@ -68,7 +68,8 @@
     <Compile Include="WeatherEnum.cs" />
     <Compile Include="WeatherType\ColdWeather.cs" />
     <Compile Include="WeatherType\HotWeather.cs" />
-    <Compile Include="WeatherType\IWeatherType.cs" />
+    <Compile Include="WeatherType\IWeatherDressing.cs" />
+    <Compile Include="WeatherType\WeatherDressing.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

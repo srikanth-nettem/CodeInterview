@@ -1,6 +1,7 @@
 ﻿using CodeInterview.WeatherDress.Core.WeatherType;
 using Xunit;
 using NSubstitute;
+using CodeInterview.WeatherDress.Core.Validations;
 
 namespace CodeInterview.WeatherDress.Core.Tests.WeatherType
 {
@@ -8,13 +9,16 @@ namespace CodeInterview.WeatherDress.Core.Tests.WeatherType
     [Trait("Category", "unit")]
     public class ColdWeatherTests
     {
-        private IWeatherType _coldWeather;
-        private IWriter _writerMock;
+        private readonly WeatherDressing _coldWeather;
+        private readonly IWriter _writerMock;
+        private readonly IDressValidator _dressValidator;
 
         public ColdWeatherTests()
         {
             _writerMock = Substitute.For<IWriter>();
-            _coldWeather = new ColdWeather(_writerMock);
+            _dressValidator = Substitute.For<IDressValidator>();
+            _coldWeather = new ColdWeather(_writerMock, _dressValidator);
+            _dressValidator.isValid(DressCommand.FootwearOn).ReturnsForAnyArgs(true);
         }
 
         [Fact(DisplayName = "Should take off pajamas on Pajamas_Off Command")]

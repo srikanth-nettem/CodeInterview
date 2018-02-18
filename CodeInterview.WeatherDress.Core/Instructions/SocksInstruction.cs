@@ -6,9 +6,9 @@ namespace CodeInterview.WeatherDress.Core.Instructions
 {
     public class SocksInstruction : IInstruction
     {
-        private readonly IWeatherType _weatherType;
+        private readonly IWeatherDressing _weatherType;
         private readonly IStateManager _stateManager;
-        public SocksInstruction(IWeatherType weatherType, IStateManager stateManager)
+        public SocksInstruction(IWeatherDressing weatherType, IStateManager stateManager)
         {
             _weatherType = weatherType;
             _stateManager = stateManager;

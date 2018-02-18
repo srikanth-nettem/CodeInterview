@@ -6,10 +6,10 @@ namespace CodeInterview.WeatherDress.Core.Instructions
 {
     public class FootwearInstruction : IInstruction
     {
-        private readonly IWeatherType _weatherType;
+        private readonly IWeatherDressing _weatherType;
         private readonly IStateManager _stateManager;
 
-        public FootwearInstruction(IWeatherType weatherType, IStateManager stateManager)
+        public FootwearInstruction(IWeatherDressing weatherType, IStateManager stateManager)
         {
             _weatherType = weatherType;
             _stateManager = stateManager;

@@ -14,7 +14,7 @@ namespace CodeInterview.WeatherDress.Core.Tests
     [Binding]
     public class WeatherDressingSteps
     {
-       private IWeatherType _weatherType;
+       private WeatherDressing _weatherType;
        private readonly IWriter _writerMock;
        private List<string> dressed;
        private readonly IStateManager _stateManager;
@@ -53,7 +53,7 @@ namespace CodeInterview.WeatherDress.Core.Tests
                     _rulesEngine.ClearRules();
                     _coldWeatherRules = new ColdWeatherRules(_rulesEngine);
                     _coldWeatherRules.ConfigureRules();
-                    _weatherType = new ColdWeather(_writerMock);
+                    _weatherType = new ColdWeather(_writerMock, _dressValidator);
                     break;
                 default:
                     _weatherType = null;

@@ -6,9 +6,9 @@ namespace CodeInterview.WeatherDress.Core.Instructions
 {
     public class LeaveHouseInstruction : IInstruction
     {
-        private readonly IWeatherType _weatherType;
+        private readonly IWeatherDressing _weatherType;
         private readonly IStateManager _stateManager;
-        public LeaveHouseInstruction(IWeatherType weatherType, IStateManager stateManager)
+        public LeaveHouseInstruction(IWeatherDressing weatherType, IStateManager stateManager)
         {
             _weatherType = weatherType;
             _stateManager = stateManager;

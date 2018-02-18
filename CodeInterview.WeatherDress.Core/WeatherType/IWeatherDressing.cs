@@ -1,7 +1,12 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace CodeInterview.WeatherDress.Core.WeatherType
 {
-   public interface IWeatherType
+    public interface IWeatherDressing
     {
          void PutOnShirt();
          void PutOnPants();
@@ -9,7 +14,8 @@ namespace CodeInterview.WeatherDress.Core.WeatherType
          void PutOnFootwear();
          void PutOnJacket();
          void PutOnSocks();
-         void TakeOffPajamas();
+        void TakeOffPajamas();
          void LeaveHouse();
-       }
+
+    }
 }

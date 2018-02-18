@@ -5,69 +5,50 @@ using System;
 
 namespace CodeInterview.WeatherDress.Core.WeatherType
 {
-    public class HotWeather:IWeatherType
+    public class HotWeather:WeatherDressing
     {
-        private readonly IWriter _writer;
-        private readonly IDressValidator _dressValidator;
-        public HotWeather(IWriter writer, IDressValidator dressValidator)
+        public HotWeather(IWriter writer, IDressValidator dressValidator) : base(writer, dressValidator)
         {
-            _writer = writer;
-            _dressValidator = dressValidator;
         }
 
-        private void validateDress(DressCommand dressCommand, Action callback)
-        {
-            if (!_dressValidator.isValid(dressCommand))
-            {
-                throw new NotSupportedDressException(String.Format("Validation rule failed for {0}", dressCommand));
-            }
-
-            callback();
-        }
-
-        public void PutOnShirt()
+        public override void PutOnShirt()
         {
             validateDress(DressCommand.ShirtOn, 
             ()=> _writer.Write("shirt") );
         }
 
-        public void PutOnPants()
+        public override void PutOnPants()
         {
             validateDress(DressCommand.PantsOn,
             ()=> _writer.Write("shorts") );
         }
 
-        public void PutOnHeadwear()
+        public override void PutOnHeadwear()
         {
             validateDress(DressCommand.PantsOn,
             ()=>_writer.Write("sun visor"));
         }
 
-        public void PutOnFootwear()
+        public override void PutOnFootwear()
         {
             validateDress(DressCommand.PantsOn,
             ()=>_writer.Write("sandals"));
         }
 
-        public void PutOnJacket()
+        public override void PutOnJacket()
         {
             validateDress(DressCommand.JacketOn,
             () => { throw new InvalidDressInstructionException("Cannot wear Jacket in Hot Weather"); });
         }
 
-        public void PutOnSocks()
+        public override void PutOnSocks()
         {
             validateDress(DressCommand.SocksOn,
             () => { throw new InvalidDressInstructionException("Cannot wear Socks in Hot Weather"); });
 
         }
 
-        public void TakeOffPajamas()
-        {
-            _writer.Write("Removing PJs");
-        }
-
-        public void LeaveHouse()
+        public override void LeaveHouse()
         {
             _writer.Write("leaving house");
         }
