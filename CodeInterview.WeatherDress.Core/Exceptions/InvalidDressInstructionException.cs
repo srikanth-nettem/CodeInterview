@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CodeInterview.WeatherDress.Core.Exceptions
 {
-    public class NotAValidDressInstructionException:Exception
+    public class InvalidDressInstructionException:Exception
     {
-        public NotAValidDressInstructionException(string message):base(message)
+        public InvalidDressInstructionException(string message):base(message)
         {
         }
     }
