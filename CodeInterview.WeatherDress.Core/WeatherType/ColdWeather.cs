@@ -21,37 +21,37 @@ namespace CodeInterview.WeatherDress.Core.WeatherType
 
         public override void PutOnPants()
         {
-            validateDress(DressCommand.ShirtOn,
+            validateDress(DressCommand.PantsOn,
             () => _writer.Write("pants"));
         }
 
         public override void PutOnHeadwear()
         {
-            validateDress(DressCommand.ShirtOn,
+            validateDress(DressCommand.HeadwearOn,
             () => _writer.Write("hat"));
         }
 
         public override void PutOnFootwear()
         {
-            validateDress(DressCommand.ShirtOn,
+            validateDress(DressCommand.FootwearOn,
             () => _writer.Write("boots"));
         }
 
         public override void PutOnJacket()
         {
-            validateDress(DressCommand.ShirtOn,
+            validateDress(DressCommand.JacketOn,
             () => _writer.Write("jacket"));
         }
 
         public override void PutOnSocks()
         {
-            validateDress(DressCommand.ShirtOn,
+            validateDress(DressCommand.SocksOn,
             () => _writer.Write("socks"));
         }
 
         public override void LeaveHouse()
         {
-            validateDress(DressCommand.ShirtOn,
+            validateDress(DressCommand.LeaveHouse,
             () => _writer.Write("leaving house"));
         }
     }

@@ -20,6 +20,7 @@ namespace CodeInterview.WeatherDress.Core.WeatherType
     {
         if (!_dressValidator.isValid(dressCommand))
         {
+                Console.WriteLine(dressCommand);
             throw new NotSupportedDressException(string.Format("Validation rule failed for {0}", dressCommand));
         }
 

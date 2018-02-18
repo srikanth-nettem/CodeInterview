@@ -17,6 +17,7 @@ namespace CodeInterview.WeatherDress.Core.Instructions
 
         public void Execute()
         {
+            _stateManager.CurrentState = DressCommand.JacketOn;
             _weatherType.PutOnJacket();
         }
     }
