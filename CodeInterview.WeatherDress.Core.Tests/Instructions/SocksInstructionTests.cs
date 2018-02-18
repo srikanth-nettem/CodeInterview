@@ -25,6 +25,7 @@ namespace CodeInterview.WeatherDress.Core.Tests.Instructions
         {
             _socksInstruction.Execute();
             _weatherMock.Received().PutOnSocks();
+            _stateManager.Received().CurrentState = DressCommand.SocksOn;
         }
     }
 }

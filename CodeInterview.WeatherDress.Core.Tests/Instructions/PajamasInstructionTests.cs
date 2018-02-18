@@ -25,6 +25,8 @@ namespace CodeInterview.WeatherDress.Core.Tests.Instructions
         {
             _pajamasInstruction.Execute();
             _weatherMock.Received().TakeOffPajamas();
+            _stateManager.Received().CurrentState = DressCommand.Pajamas_Off;
+
         }
     }
 }

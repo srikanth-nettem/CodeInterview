@@ -25,6 +25,7 @@ namespace CodeInterview.WeatherDress.Core.Tests.Instructions
         {
             _shirtInstruction.Execute();
             _weatherMock.Received().PutOnShirt();
+            _stateManager.Received().CurrentState = DressCommand.ShirtOn;
         }
     }
 }

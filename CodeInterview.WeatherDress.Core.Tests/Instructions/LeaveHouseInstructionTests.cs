@@ -25,6 +25,7 @@ namespace CodeInterview.WeatherDress.Core.Tests.Instructions
         {
             _leaveHouseInstruction.Execute();
             _weatherMock.Received().LeaveHouse();
+            _stateManager.Received().CurrentState = DressCommand.LeaveHouse;
         }
     }
 }

@@ -24,6 +24,7 @@ namespace CodeInterview.WeatherDress.Core.Tests.Instructions
         public void onExecute()
         {
             _jacketInstruction.Execute();
+            _stateManager.Received().CurrentState = DressCommand.JacketOn;
             _weatherMock.Received().PutOnJacket();
         }
     }
