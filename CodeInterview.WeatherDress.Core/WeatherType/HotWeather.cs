@@ -25,27 +25,24 @@ namespace CodeInterview.WeatherDress.Core.WeatherType
 
         public override void PutOnHeadwear()
         {
-            validateDress(DressCommand.PantsOn,
+            validateDress(DressCommand.HeadwearOn,
             ()=>_writer.Write("sun visor"));
         }
 
         public override void PutOnFootwear()
         {
-            validateDress(DressCommand.PantsOn,
+            validateDress(DressCommand.FootwearOn,
             ()=>_writer.Write("sandals"));
         }
 
         public override void PutOnJacket()
         {
-            validateDress(DressCommand.JacketOn,
-            () => { throw new InvalidDressInstructionException("Cannot wear Jacket in Hot Weather"); });
+            throw new InvalidDressInstructionException("Cannot wear Jacket in Hot Weather");
         }
 
         public override void PutOnSocks()
         {
-            validateDress(DressCommand.SocksOn,
-            () => { throw new InvalidDressInstructionException("Cannot wear Socks in Hot Weather"); });
-
+            throw new InvalidDressInstructionException("Cannot wear Socks in Hot Weather");
         }
 
         public override void LeaveHouse()
