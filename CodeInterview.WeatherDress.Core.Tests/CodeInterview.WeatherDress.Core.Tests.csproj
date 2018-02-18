@@ -93,6 +93,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Instructions\PajamasInstructionTests.cs" />
+    <Compile Include="Instructions\HeadwearInstructionTests.cs" />
+    <Compile Include="Instructions\FootwearInstructionTests.cs" />
+    <Compile Include="Instructions\SocksInstructionTests.cs" />
+    <Compile Include="Instructions\PantsInstructionTests.cs" />
+    <Compile Include="Instructions\LeaveHouseInstructionTests.cs" />
+    <Compile Include="Instructions\ShirtInstructionTests.cs" />
+    <Compile Include="Instructions\JacketInstructionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StepTransformations\MapTableToDressInstructions.cs" />
     <Compile Include="WeatherDressingSteps.cs" />

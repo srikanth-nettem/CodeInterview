@@ -43,7 +43,7 @@ Scenario: Dress accordingly For Cold Weather
 
 @integration
 @ignore
-Scenario: Duplicate DressOn 
+Scenario: Duplicate DressOn is invalid.
 	Given the weather is "HOT"  
 	When I wear the following in the given order
 	| Dress       |
@@ -53,7 +53,7 @@ Scenario: Duplicate DressOn
 	Then the dressing should fail
 
 @integration
-Scenario: Dress with Socks in Hot Weather
+Scenario: Dress with Socks in Hot Weather is invalid.
 	Given the weather is "HOT"  
 	When I wear the following in the given order
 	| Dress       |
@@ -64,7 +64,7 @@ Scenario: Dress with Socks in Hot Weather
 		But the dressing should fail
 
 @integration
-Scenario: Dress with Jacket in Hot Weather 
+Scenario: Dress with Jacket in Hot Weather is invalid.
 	Given the weather is "HOT"  
 	When I wear the following in the given order
 	| Dress       |
@@ -82,7 +82,7 @@ Scenario: Dress with Jacket in Hot Weather
 
 @integration
 @ignore
-Scenario: No Complete Dressing (miss to wear atleast one dressing) 
+Scenario: No Complete Dressing (miss to wear atleast one dressing) is invalid.
 	Given the weather is "COLD"  
 	When I wear the following in the given order
 	| Dress       |
@@ -102,7 +102,7 @@ Scenario: No Complete Dressing (miss to wear atleast one dressing)
 
 @integration
 @ignore
-Scenario: Dress without PajamasOff
+Scenario: Dress without PajamasOff is invalid.
 	Given the weather is "HOT"  
 	When I wear the following in the given order
 	| Dress      |

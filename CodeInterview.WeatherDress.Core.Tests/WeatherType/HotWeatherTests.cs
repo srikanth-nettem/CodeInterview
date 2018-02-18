@@ -4,6 +4,7 @@ using NSubstitute;
 
 namespace CodeInterview.WeatherDress.Core.Tests.WeatherType
 {
+    [Trait("Category", "unit")]
     public class HotWeatherTests
     {
         private IWeatherType _hotWeather;

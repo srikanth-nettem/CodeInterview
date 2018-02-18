@@ -166,13 +166,13 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [Xunit.FactAttribute(DisplayName="Duplicate DressOn", Skip="Ignored")]
+        [Xunit.FactAttribute(DisplayName="Duplicate DressOn is invalid.", Skip="Ignored")]
         [Xunit.TraitAttribute("FeatureTitle", "Weather Dressing")]
-        [Xunit.TraitAttribute("Description", "Duplicate DressOn")]
+        [Xunit.TraitAttribute("Description", "Duplicate DressOn is invalid.")]
         [Xunit.TraitAttribute("Category", "integration")]
-        public virtual void DuplicateDressOn()
+        public virtual void DuplicateDressOnIsInvalid_()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Duplicate DressOn", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Duplicate DressOn is invalid.", new string[] {
                         "integration",
                         "ignore"});
 #line 46
@@ -196,13 +196,13 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [Xunit.FactAttribute(DisplayName="Dress with Socks in Hot Weather")]
+        [Xunit.FactAttribute(DisplayName="Dress with Socks in Hot Weather is invalid.")]
         [Xunit.TraitAttribute("FeatureTitle", "Weather Dressing")]
-        [Xunit.TraitAttribute("Description", "Dress with Socks in Hot Weather")]
+        [Xunit.TraitAttribute("Description", "Dress with Socks in Hot Weather is invalid.")]
         [Xunit.TraitAttribute("Category", "integration")]
-        public virtual void DressWithSocksInHotWeather()
+        public virtual void DressWithSocksInHotWeatherIsInvalid_()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dress with Socks in Hot Weather", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dress with Socks in Hot Weather is invalid.", new string[] {
                         "integration"});
 #line 56
 this.ScenarioSetup(scenarioInfo);
@@ -227,13 +227,13 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [Xunit.FactAttribute(DisplayName="Dress with Jacket in Hot Weather")]
+        [Xunit.FactAttribute(DisplayName="Dress with Jacket in Hot Weather is invalid.")]
         [Xunit.TraitAttribute("FeatureTitle", "Weather Dressing")]
-        [Xunit.TraitAttribute("Description", "Dress with Jacket in Hot Weather")]
+        [Xunit.TraitAttribute("Description", "Dress with Jacket in Hot Weather is invalid.")]
         [Xunit.TraitAttribute("Category", "integration")]
-        public virtual void DressWithJacketInHotWeather()
+        public virtual void DressWithJacketInHotWeatherIsInvalid_()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dress with Jacket in Hot Weather", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dress with Jacket in Hot Weather is invalid.", new string[] {
                         "integration"});
 #line 67
 this.ScenarioSetup(scenarioInfo);
@@ -270,13 +270,13 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [Xunit.FactAttribute(DisplayName="No Complete Dressing (miss to wear atleast one dressing)", Skip="Ignored")]
+        [Xunit.FactAttribute(DisplayName="No Complete Dressing (miss to wear atleast one dressing) is invalid.", Skip="Ignored")]
         [Xunit.TraitAttribute("FeatureTitle", "Weather Dressing")]
-        [Xunit.TraitAttribute("Description", "No Complete Dressing (miss to wear atleast one dressing)")]
+        [Xunit.TraitAttribute("Description", "No Complete Dressing (miss to wear atleast one dressing) is invalid.")]
         [Xunit.TraitAttribute("Category", "integration")]
-        public virtual void NoCompleteDressingMissToWearAtleastOneDressing()
+        public virtual void NoCompleteDressingMissToWearAtleastOneDressingIsInvalid_()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("No Complete Dressing (miss to wear atleast one dressing)", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("No Complete Dressing (miss to wear atleast one dressing) is invalid.", new string[] {
                         "integration",
                         "ignore"});
 #line 85
@@ -318,13 +318,13 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [Xunit.FactAttribute(DisplayName="Dress without PajamasOff", Skip="Ignored")]
+        [Xunit.FactAttribute(DisplayName="Dress without PajamasOff is invalid.", Skip="Ignored")]
         [Xunit.TraitAttribute("FeatureTitle", "Weather Dressing")]
-        [Xunit.TraitAttribute("Description", "Dress without PajamasOff")]
+        [Xunit.TraitAttribute("Description", "Dress without PajamasOff is invalid.")]
         [Xunit.TraitAttribute("Category", "integration")]
-        public virtual void DressWithoutPajamasOff()
+        public virtual void DressWithoutPajamasOffIsInvalid_()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dress without PajamasOff", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Dress without PajamasOff is invalid.", new string[] {
                         "integration",
                         "ignore"});
 #line 105
