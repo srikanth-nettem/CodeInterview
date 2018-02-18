@@ -2,6 +2,6 @@
 {
     public interface IWeatherRules
     {
-        void configureRules();
+        void ConfigureRules();
     }
 }

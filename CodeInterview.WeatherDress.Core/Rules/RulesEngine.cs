@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace CodeInterview.WeatherDress.Core.Rules
 {
@@ -18,6 +19,11 @@ namespace CodeInterview.WeatherDress.Core.Rules
                 rules.Add(dressCommand, rule);
             }
             rules[dressCommand].Add(ruleSet);
+        }
+
+        public void ClearRules()
+        {
+            rules.Clear();
         }
 
         public IDictionary<DressCommand, bool> GetRule(DressCommand dressCommand)

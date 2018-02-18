@@ -1,6 +1,8 @@
 ﻿using CodeInterview.WeatherDress.Core.WeatherType;
 using Xunit;
 using NSubstitute;
+using CodeInterview.WeatherDress.Core.Validations;
+using CodeInterview.WeatherDress.Core.Exceptions;
 
 namespace CodeInterview.WeatherDress.Core.Tests.WeatherType
 {
@@ -8,12 +10,15 @@ namespace CodeInterview.WeatherDress.Core.Tests.WeatherType
     public class HotWeatherTests
     {
         private IWeatherType _hotWeather;
-        private IWriter _writerMock;
+        private readonly IWriter _writerMock;
+        private readonly IDressValidator _dressValidator;
 
         public HotWeatherTests()
         {
-            _writerMock = Substitute.For<IWriter>(); 
-            _hotWeather = new HotWeather(_writerMock);
+            _writerMock = Substitute.For<IWriter>();
+            _dressValidator = Substitute.For<IDressValidator>(); 
+            _hotWeather = new HotWeather(_writerMock, _dressValidator);
+            _dressValidator.isValid(DressCommand.FootwearOn).ReturnsForAnyArgs(true);
         }
 
         [Fact(DisplayName = "Should Dress Shorts For Pants Command in Hot Weather.")]
@@ -26,15 +31,13 @@ namespace CodeInterview.WeatherDress.Core.Tests.WeatherType
         [Fact(DisplayName = "Should fail when asked to wear Jacket in Hot Weather")]
         public void ShouldFailOnJacketCommand()
         {
-            _hotWeather.PutOnJacket();
-            _writerMock.Received().Write("fail");
+            Assert.Throws(typeof(InvalidDressInstructionException), ()=>_hotWeather.PutOnJacket());
         }
 
         [Fact(DisplayName = "Should fail when asked to wear socks in Hot Weather")]
         public void ShouldFailOnSocksCommand()
         {
-            _hotWeather.PutOnSocks();
-            _writerMock.Received().Write("fail");
+            Assert.Throws(typeof(InvalidDressInstructionException), () => _hotWeather.PutOnSocks());
         }
 
         [Fact(DisplayName = "Should Dress shirt For Shirt Command in Hot Weather.")]

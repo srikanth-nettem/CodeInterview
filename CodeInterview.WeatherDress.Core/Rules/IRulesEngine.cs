@@ -4,7 +4,8 @@ namespace CodeInterview.WeatherDress.Core.Rules
 {
     public interface IRulesEngine
     {
-         void AddRule(DressCommand dressCommand, KeyValuePair<DressCommand, bool> rule);
+        void ClearRules();
+        void AddRule(DressCommand dressCommand, KeyValuePair<DressCommand, bool> rule);
         IDictionary<DressCommand, bool> GetRule(DressCommand dressCommand);
     }
 }

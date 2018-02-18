@@ -10,9 +10,8 @@ namespace CodeInterview.WeatherDress.Core.Rules
             _rulesEngine = rulesEngine;
         }
 
-        public void configureRules()
+        public void ConfigureRules()
         {
-
             _rulesEngine.AddRule(DressCommand.LeaveHouse, new KeyValuePair<DressCommand, bool>(DressCommand.Pajamas_Off, true));
             _rulesEngine.AddRule(DressCommand.LeaveHouse, new KeyValuePair<DressCommand, bool>(DressCommand.PantsOn, true));
             _rulesEngine.AddRule(DressCommand.LeaveHouse, new KeyValuePair<DressCommand, bool>(DressCommand.ShirtOn, true));

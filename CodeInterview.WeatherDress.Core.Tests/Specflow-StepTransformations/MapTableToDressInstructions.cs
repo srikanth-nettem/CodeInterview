@@ -6,6 +6,7 @@ using TechTalk.SpecFlow.Assist;
 using CodeInterview.WeatherDress.Core.Instructions;
 using CodeInterview.WeatherDress.Core.WeatherType;
 using CodeInterview.WeatherDress.Core;
+using CodeInterview.WeatherDress.Core.State;
 
 namespace Weather.Dress.Core.Tests.StepTransformations
 {
@@ -30,25 +31,26 @@ namespace Weather.Dress.Core.Tests.StepTransformations
 
         private IInstruction InstantiateDress(DressCommand dressCommand)
         {
+            IStateManager stateManager = (IStateManager)ScenarioContext.Current["DressState"];
             IWeatherType weatherTypeMock = (IWeatherType)ScenarioContext.Current["WeatherType"];
             switch (dressCommand)
             {
                 case DressCommand.Pajamas_Off:
-                    return new PajamasInstruction(weatherTypeMock);
+                    return new PajamasInstruction(weatherTypeMock, stateManager);
                 case DressCommand.ShirtOn:
-                    return new ShirtInstruction(weatherTypeMock);
+                    return new ShirtInstruction(weatherTypeMock, stateManager);
                 case DressCommand.PantsOn:
-                    return new PantsInstruction(weatherTypeMock);
+                    return new PantsInstruction(weatherTypeMock, stateManager);
                 case DressCommand.JacketOn:
-                    return new JacketInstruction(weatherTypeMock);
+                    return new JacketInstruction(weatherTypeMock, stateManager);
                 case DressCommand.SocksOn:
-                    return new SocksInstruction(weatherTypeMock);
+                    return new SocksInstruction(weatherTypeMock, stateManager);
                 case DressCommand.HeadwearOn:
-                    return new HeadwearInstruction(weatherTypeMock);
+                    return new HeadwearInstruction(weatherTypeMock, stateManager);
                 case DressCommand.FootwearOn:
-                    return new FootwearInstruction(weatherTypeMock);
+                    return new FootwearInstruction(weatherTypeMock, stateManager);
                 case DressCommand.LeaveHouse:
-                    return new LeaveHouseInstruction(weatherTypeMock);
+                    return new LeaveHouseInstruction(weatherTypeMock, stateManager);
                 default:
                     throw new Exception("Invalid Command");
             }

@@ -13,7 +13,7 @@ namespace CodeInterview.WeatherDress.Core.Tests.Rules
         {
             _ruleEngine = new RulesEngine();
             _weatherRules = new HotWeatherRules(_ruleEngine);
-            _weatherRules.configureRules();
+            _weatherRules.ConfigureRules();
         }
 
         [Fact(DisplayName ="Should have Pajamas_Off before any DressCommand For HotWeather")]

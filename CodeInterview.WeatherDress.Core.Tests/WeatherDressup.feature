@@ -53,6 +53,7 @@ Scenario: Duplicate DressOn is invalid.
 	Then the dressing should fail
 
 @integration
+@ignore
 Scenario: Dress with Socks in Hot Weather is invalid.
 	Given the weather is "HOT"  
 	When I wear the following in the given order
@@ -64,6 +65,7 @@ Scenario: Dress with Socks in Hot Weather is invalid.
 		But the dressing should fail
 
 @integration
+@ignore
 Scenario: Dress with Jacket in Hot Weather is invalid.
 	Given the weather is "HOT"  
 	When I wear the following in the given order

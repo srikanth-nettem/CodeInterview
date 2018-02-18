@@ -5,6 +5,9 @@ using TechTalk.SpecFlow;
 using Xunit;
 using CodeInterview.WeatherDress.Core.WeatherType;
 using CodeInterview.WeatherDress.Core.Instructions;
+using CodeInterview.WeatherDress.Core.State;
+using CodeInterview.WeatherDress.Core.Rules;
+using CodeInterview.WeatherDress.Core.Validations;
 
 namespace CodeInterview.WeatherDress.Core.Tests
 {
@@ -12,16 +15,25 @@ namespace CodeInterview.WeatherDress.Core.Tests
     public class WeatherDressingSteps
     {
        private IWeatherType _weatherType;
-       private IWriter _writerMock;
+       private readonly IWriter _writerMock;
        private List<string> dressed;
+       private readonly IStateManager _stateManager;
+       private readonly IRulesEngine _rulesEngine;
+       private readonly IDressValidator _dressValidator;
+       private  IWeatherRules _hotWeatherRules;
+       private  IWeatherRules _coldWeatherRules;
 
         public WeatherDressingSteps()
         {
+            _rulesEngine = new RulesEngine();
+            _stateManager = new StateManager();
+            _dressValidator = new DressValidator(_rulesEngine, _stateManager);
             _writerMock = Substitute.For<IWriter>();
             _writerMock.When(writer => writer.Write(Arg.Any<string>())).Do(callinfo =>
             {
                 dressed.Add(callinfo.Arg<string>());
             });
+            ScenarioContext.Current.Add("DressState", _stateManager);
         }
 
         [Given(@"the weather is ""(.*)""")]
@@ -32,9 +44,15 @@ namespace CodeInterview.WeatherDress.Core.Tests
             switch (weather)
             {
                 case WeatherEnum.HOT:
-                    _weatherType = new HotWeather(_writerMock);
+                    _rulesEngine.ClearRules();
+                    _hotWeatherRules = new HotWeatherRules(_rulesEngine);
+                    _hotWeatherRules.ConfigureRules();
+                    _weatherType = new HotWeather(_writerMock, _dressValidator);
                     break;
                 case WeatherEnum.COLD:
+                    _rulesEngine.ClearRules();
+                    _coldWeatherRules = new ColdWeatherRules(_rulesEngine);
+                    _coldWeatherRules.ConfigureRules();
                     _weatherType = new ColdWeather(_writerMock);
                     break;
                 default:
