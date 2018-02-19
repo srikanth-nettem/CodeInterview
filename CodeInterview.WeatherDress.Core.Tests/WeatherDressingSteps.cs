@@ -47,13 +47,13 @@ namespace CodeInterview.WeatherDress.Core.Tests
                     _rulesEngine.ClearRules();
                     _hotWeatherRules = new HotWeatherRules(_rulesEngine);
                     _hotWeatherRules.ConfigureRules();
-                    _weatherType = new HotWeather(_writerMock, _dressValidator);
+                    _weatherType = new HotWeatherDressing(_writerMock, _dressValidator);
                     break;
                 case WeatherEnum.COLD:
                     _rulesEngine.ClearRules();
                     _coldWeatherRules = new ColdWeatherRules(_rulesEngine);
                     _coldWeatherRules.ConfigureRules();
-                    _weatherType = new ColdWeather(_writerMock, _dressValidator);
+                    _weatherType = new ColdWeatherDressing(_writerMock, _dressValidator);
                     break;
                 default:
                     _weatherType = null;

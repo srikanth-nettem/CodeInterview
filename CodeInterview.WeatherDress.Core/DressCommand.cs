@@ -15,6 +15,7 @@ namespace CodeInterview.WeatherDress.Core
         FootwearOn,
         JacketOn,
         SocksOn,
-        LeaveHouse
+        LeaveHouse,
+        NULL
     }
 }

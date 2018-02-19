@@ -5,9 +5,9 @@ using System;
 
 namespace CodeInterview.WeatherDress.Core.WeatherType
 {
-    public class HotWeather:WeatherDressing
+    public class HotWeatherDressing:WeatherDressing
     {
-        public HotWeather(IWriter writer, IDressValidator dressValidator) : base(writer, dressValidator)
+        public HotWeatherDressing(IWriter writer, IDressValidator dressValidator) : base(writer, dressValidator)
         {
         }
 
@@ -37,12 +37,12 @@ namespace CodeInterview.WeatherDress.Core.WeatherType
 
         public override void PutOnJacket()
         {
-            throw new InvalidDressInstructionException("Cannot wear Jacket in Hot Weather");
+            throw new NotSupportedDressException("Cannot wear Jacket in Hot Weather");
         }
 
         public override void PutOnSocks()
         {
-            throw new InvalidDressInstructionException("Cannot wear Socks in Hot Weather");
+            throw new NotSupportedDressException("Cannot wear Socks in Hot Weather");
         }
 
         public override void LeaveHouse()

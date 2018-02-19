@@ -18,7 +18,7 @@ namespace CodeInterview.WeatherDress.Core.Tests.WeatherType
         {
             _writerMock = Substitute.For<IWriter>();
             _dressValidator = Substitute.For<IDressValidator>();
-            _coldWeather = new ColdWeather(_writerMock, _dressValidator);
+            _coldWeather = new ColdWeatherDressing(_writerMock, _dressValidator);
             _dressValidator.isValid(DressCommand.Pajamas_Off).ReturnsForAnyArgs(true);
         }
 
@@ -78,11 +78,11 @@ namespace CodeInterview.WeatherDress.Core.Tests.WeatherType
             _writerMock.Received().Write("boots");
         }
 
-        [Fact(DisplayName = "Should throw NotSupportedDressException when dressValidationRule fails.")]
+        [Fact(DisplayName = "Should throw WeatherDressRuleViolatedException when dressValidationRule fails.")]
         public void ShouldThrowInvalidDressInstructionException()
         {
             _dressValidator.isValid(DressCommand.FootwearOn).Returns(false);
-            Assert.Throws(typeof(NotSupportedDressException), () => _coldWeather.PutOnFootwear());
+            Assert.Throws(typeof(WeatherDressRuleViolatedException), () => _coldWeather.PutOnFootwear());
         }
     }
 }

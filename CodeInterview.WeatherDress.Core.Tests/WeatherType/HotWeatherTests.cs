@@ -17,7 +17,7 @@ namespace CodeInterview.WeatherDress.Core.Tests.WeatherType
         {
             _writerMock = Substitute.For<IWriter>();
             _dressValidator = Substitute.For<IDressValidator>(); 
-            _hotWeather = new HotWeather(_writerMock, _dressValidator);
+            _hotWeather = new HotWeatherDressing(_writerMock, _dressValidator);
             _dressValidator.isValid(DressCommand.PantsOn).ReturnsForAnyArgs(true);
         }
 
@@ -28,16 +28,16 @@ namespace CodeInterview.WeatherDress.Core.Tests.WeatherType
             _writerMock.Received().Write("shorts");
         }
 
-        [Fact(DisplayName = "Should fail when asked to wear Jacket in Hot Weather")]
+        [Fact(DisplayName = "Should throw NotSupportedDressException when asked to wear Jacket in Hot Weather")]
         public void ShouldFailOnJacketCommand()
         {
-            Assert.Throws(typeof(InvalidDressInstructionException), ()=>_hotWeather.PutOnJacket());
+            Assert.Throws(typeof(NotSupportedDressException), ()=>_hotWeather.PutOnJacket());
         }
 
-        [Fact(DisplayName = "Should fail when asked to wear socks in Hot Weather")]
+        [Fact(DisplayName = "Should throw NotSupportedDressException when asked to wear socks in Hot Weather")]
         public void ShouldFailOnSocksCommand()
         {
-            Assert.Throws(typeof(InvalidDressInstructionException), () => _hotWeather.PutOnSocks());
+            Assert.Throws(typeof(NotSupportedDressException), () => _hotWeather.PutOnSocks());
         }
 
         [Fact(DisplayName = "Should Dress shirt For Shirt Command in Hot Weather.")]
@@ -75,11 +75,11 @@ namespace CodeInterview.WeatherDress.Core.Tests.WeatherType
             _writerMock.Received().Write("leaving house");
         }
 
-        [Fact(DisplayName = "Should throw NotSupportedDressException when dressValidationRule fails.")]
+        [Fact(DisplayName = "Should throw WeatherDressRuleViolatedException when dressValidationRule fails.")]
         public void ShouldThrowInvalidDressInstructionException()
         {
             _dressValidator.isValid(DressCommand.FootwearOn).ReturnsForAnyArgs(false);
-            Assert.Throws(typeof(NotSupportedDressException), () => _hotWeather.PutOnFootwear());
+            Assert.Throws(typeof(WeatherDressRuleViolatedException), () => _hotWeather.PutOnFootwear());
         }
     }
 }

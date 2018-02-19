@@ -9,5 +9,7 @@ namespace CodeInterview.WeatherDress.Core
     public interface IWriter
     {
         void Write(string statement);
+
+        void WriteLine(string statement);
     }
 }

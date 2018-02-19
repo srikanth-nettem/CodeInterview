@@ -7,9 +7,9 @@ using CodeInterview.WeatherDress.Core.Validations;
 
 namespace CodeInterview.WeatherDress.Core.WeatherType
 {
-    public class ColdWeather:WeatherDressing
+    public class ColdWeatherDressing:WeatherDressing
     {
-        public ColdWeather(IWriter writer, IDressValidator dressValidator) : base(writer, dressValidator)
+        public ColdWeatherDressing(IWriter writer, IDressValidator dressValidator) : base(writer, dressValidator)
         {
         }
 

@@ -8,6 +8,7 @@ namespace CodeInterview.WeatherDress.Core.State
 
         private ISet<DressCommand> _visitedStates;
 
+        private DressCommand _previousState=DressCommand.NULL;
         public StateManager()
         {
             _visitedStates = new HashSet<DressCommand>();
@@ -21,7 +22,8 @@ namespace CodeInterview.WeatherDress.Core.State
 
             set
             {
-                _visitedStates.Add(value);
+                _visitedStates.Add(_previousState);
+                _previousState = value;
                 _currentState = value;
             }
         }
