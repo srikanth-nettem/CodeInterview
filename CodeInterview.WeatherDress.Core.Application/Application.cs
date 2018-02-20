@@ -1,5 +1,5 @@
 ﻿using CodeInterview.WeatherDress.Core.Rules;
-using CodeInterview.WeatherDress.Core.WeatherType;
+using CodeInterview.WeatherDress.Core.Weather;
 using StructureMap;
 using System;
 using System.Collections.Generic;

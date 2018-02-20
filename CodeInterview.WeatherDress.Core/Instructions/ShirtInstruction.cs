@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CodeInterview.WeatherDress.Core.WeatherType;
+﻿using CodeInterview.WeatherDress.Core.Weather;
 using CodeInterview.WeatherDress.Core.State;
+using CodeInterview.WeatherDress.Core.Utils;
 
 namespace CodeInterview.WeatherDress.Core.Instructions
 {
@@ -19,7 +15,7 @@ namespace CodeInterview.WeatherDress.Core.Instructions
         }
         public void Execute()
         {
-            _stateManager.CurrentState = DressCommand.ShirtOn;
+            _stateManager.CurrentState = Dress.ShirtOn;
             _weatherType.PutOnShirt();
         }
     }

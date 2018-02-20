@@ -3,8 +3,9 @@ using CodeInterview.WeatherDress.Core.Exceptions;
 using CodeInterview.WeatherDress.Core.io;
 using CodeInterview.WeatherDress.Core.Validations;
 using System;
+using CodeInterview.WeatherDress.Core.Utils;
 
-namespace CodeInterview.WeatherDress.Core.WeatherType
+namespace CodeInterview.WeatherDress.Core.Weather
 {
    public abstract class WeatherDressing:IWeatherDressing
     {
@@ -17,7 +18,7 @@ namespace CodeInterview.WeatherDress.Core.WeatherType
         _dressValidator = dressValidator;
     }
 
-    protected internal void validateDress(DressCommand dressCommand, Action callback)
+    protected internal void validateDress(Dress dressCommand, Action callback)
     {
         if (!_dressValidator.isValid(dressCommand))
         {
@@ -34,9 +35,8 @@ namespace CodeInterview.WeatherDress.Core.WeatherType
     public abstract void PutOnSocks();
     public void TakeOffPajamas()
         {
-            validateDress(DressCommand.Pajamas_Off,
-            () =>
-            _writer.Write("Removing PJs"));
+            validateDress(Dress.Pajamas_Off,
+            () => _writer.Write(Constants.PAJAMAS_OFF));
         }
      public abstract void LeaveHouse();
        }

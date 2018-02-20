@@ -1,7 +1,8 @@
-﻿namespace CodeInterview.WeatherDress.Core.Validations
+﻿using CodeInterview.WeatherDress.Core.Utils;
+namespace CodeInterview.WeatherDress.Core.Validations
 {
     public interface IDressValidator
     {
-        bool isValid(DressCommand dressCommand);
+        bool isValid(Dress dressCommand);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using CodeInterview.WeatherDress.Core.Utils;
 
 namespace CodeInterview.WeatherDress.Core.Rules
 {
@@ -25,14 +26,14 @@ namespace CodeInterview.WeatherDress.Core.Rules
         protected internal override void ConfigureRulesForFootwearOn()
         {
             base.ConfigureRulesForFootwearOn();
-            _rulesEngine.AddRule(DressCommand.FootwearOn, new KeyValuePair<DressCommand, bool>(DressCommand.SocksOn, true));
+            _rulesEngine.AddRule(Dress.FootwearOn, new KeyValuePair<Dress, bool>(Dress.SocksOn, true));
         }
 
         protected internal override void ConfigureRulesForLeaveHouse()
         {
             base.ConfigureRulesForLeaveHouse();
-            _rulesEngine.AddRule(DressCommand.LeaveHouse, new KeyValuePair<DressCommand, bool>(DressCommand.JacketOn, true));
-            _rulesEngine.AddRule(DressCommand.LeaveHouse, new KeyValuePair<DressCommand, bool>(DressCommand.SocksOn, true));
+            _rulesEngine.AddRule(Dress.LeaveHouse, new KeyValuePair<Dress, bool>(Dress.JacketOn, true));
+            _rulesEngine.AddRule(Dress.LeaveHouse, new KeyValuePair<Dress, bool>(Dress.SocksOn, true));
         }
     }
 }

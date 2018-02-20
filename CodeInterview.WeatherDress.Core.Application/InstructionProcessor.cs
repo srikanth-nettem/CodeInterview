@@ -1,6 +1,7 @@
 ﻿using CodeInterview.WeatherDress.Core.Exceptions;
 using CodeInterview.WeatherDress.Core.Instructions;
 using CodeInterview.WeatherDress.Core.io;
+using CodeInterview.WeatherDress.Core.Utils;
 using System;
 using System.Collections.Generic;
 
@@ -43,7 +44,7 @@ namespace CodeInterview.WeatherDress.Core.Application
                 WriteException(wdve);
             }
             catch (Exception ex) {
-                WriteException(new Exception("Invalid Instruction"));
+                WriteException(new Exception(Constants.INVALID_INSTRUCTION));
             }
         }
 
@@ -63,7 +64,7 @@ namespace CodeInterview.WeatherDress.Core.Application
 
         private void WriteException(Exception ex)
         {
-            _writer.Write("fail", ConsoleColor.Red);
+            _writer.Write(Constants.FAIL, ConsoleColor.Red);
             _writer.WriteLine("");
             _writer.WriteLine(String.Format("Reason: {0}", ex.Message), ConsoleColor.DarkYellow);
             CreateSeparator();

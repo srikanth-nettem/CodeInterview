@@ -46,7 +46,8 @@
   <ItemGroup>
     <Compile Include="io\ConsoleReader.cs" />
     <Compile Include="io\ConsoleWriter.cs" />
-    <Compile Include="DressCommand.cs" />
+    <Compile Include="Utils\Constants.cs" />
+    <Compile Include="Utils\Dress.cs" />
     <Compile Include="Exceptions\InvalidDressInstructionException.cs" />
     <Compile Include="Exceptions\InvalidWeatherInstructionException.cs" />
     <Compile Include="Exceptions\NotSupportedDressException.cs" />
@@ -60,7 +61,6 @@
     <Compile Include="Instructions\PantsInstruction.cs" />
     <Compile Include="Instructions\ShirtInstruction.cs" />
     <Compile Include="Instructions\SocksInstruction.cs" />
-    <Compile Include="IProcessInstructions.cs" />
     <Compile Include="io\IReader.cs" />
     <Compile Include="io\IWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,11 +75,11 @@
     <Compile Include="State\StateManager.cs" />
     <Compile Include="Validations\DressValidator.cs" />
     <Compile Include="Validations\IDressValidator.cs" />
-    <Compile Include="WeatherEnum.cs" />
-    <Compile Include="WeatherType\ColdWeatherDressing.cs" />
-    <Compile Include="WeatherType\HotWeatherDressing.cs" />
-    <Compile Include="WeatherType\IWeatherDressing.cs" />
-    <Compile Include="WeatherType\WeatherDressing.cs" />
+    <Compile Include="Utils\WeatherType.cs" />
+    <Compile Include="Weather\ColdWeatherDressing.cs" />
+    <Compile Include="Weather\HotWeatherDressing.cs" />
+    <Compile Include="Weather\IWeatherDressing.cs" />
+    <Compile Include="Weather\WeatherDressing.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

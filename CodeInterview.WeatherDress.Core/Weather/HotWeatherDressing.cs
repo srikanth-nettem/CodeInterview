@@ -2,8 +2,9 @@
 using CodeInterview.WeatherDress.Core.Exceptions;
 using CodeInterview.WeatherDress.Core.io;
 using CodeInterview.WeatherDress.Core.Validations;
+using CodeInterview.WeatherDress.Core.Utils;
 
-namespace CodeInterview.WeatherDress.Core.WeatherType
+namespace CodeInterview.WeatherDress.Core.Weather
 {
     public class HotWeatherDressing:WeatherDressing
     {
@@ -13,26 +14,26 @@ namespace CodeInterview.WeatherDress.Core.WeatherType
 
         public override void PutOnShirt()
         {
-            validateDress(DressCommand.ShirtOn, 
-            ()=> _writer.Write("t-shirt") );
+            validateDress(Dress.ShirtOn, 
+            ()=> _writer.Write(Constants.TSHIRT) );
         }
 
         public override void PutOnPants()
         {
-            validateDress(DressCommand.PantsOn,
-            ()=> _writer.Write("shorts") );
+            validateDress(Dress.PantsOn,
+            ()=> _writer.Write(Constants.SHORTS) );
         }
 
         public override void PutOnHeadwear()
         {
-            validateDress(DressCommand.HeadwearOn,
-            ()=>_writer.Write("sun visor"));
+            validateDress(Dress.HeadwearOn,
+            ()=>_writer.Write(Constants.SUN_VISOR));
         }
 
         public override void PutOnFootwear()
         {
-            validateDress(DressCommand.FootwearOn,
-            ()=>_writer.Write("sandals"));
+            validateDress(Dress.FootwearOn,
+            ()=>_writer.Write(Constants.SANDALS));
         }
 
         public override void PutOnJacket()
@@ -47,7 +48,8 @@ namespace CodeInterview.WeatherDress.Core.WeatherType
 
         public override void LeaveHouse()
         {
-            _writer.Write("leaving house");
+            validateDress(Dress.LeaveHouse,
+            () => _writer.Write(Constants.LEAVING_HOME));
         }
     }
 }

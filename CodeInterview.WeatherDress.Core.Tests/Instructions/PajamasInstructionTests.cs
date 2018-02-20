@@ -1,9 +1,9 @@
 ﻿using Xunit;
 using NSubstitute;
 using CodeInterview.WeatherDress.Core.Instructions;
-using CodeInterview.WeatherDress.Core.WeatherType;
+using CodeInterview.WeatherDress.Core.Weather;
 using CodeInterview.WeatherDress.Core.State;
-
+using CodeInterview.WeatherDress.Core.Utils;
 namespace CodeInterview.WeatherDress.Core.Tests.Instructions
 {
     [Trait("Category", "unit")]
@@ -25,7 +25,7 @@ namespace CodeInterview.WeatherDress.Core.Tests.Instructions
         {
             _pajamasInstruction.Execute();
             _weatherMock.Received().TakeOffPajamas();
-            _stateManager.Received().CurrentState = DressCommand.Pajamas_Off;
+            _stateManager.Received().CurrentState = Dress.Pajamas_Off;
 
         }
     }

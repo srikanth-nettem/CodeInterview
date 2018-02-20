@@ -4,20 +4,19 @@ namespace CodeInterview.WeatherDress.Core.io
 {
     public class ConsoleWriter : IWriter
     {
-        private bool _started;
+
+        private bool written = false;
 
         public void Write(string statement, ConsoleColor consoleColor=ConsoleColor.Green)
         {
             Console.ForegroundColor = consoleColor;
 
-            if (_started)
+            if (!written)
             {
-                statement = string.Concat(", ", statement);
-            }else
-            {
-                _started = true;
-                statement = string.Format("Output: {0}", statement);
+                written = !written;
+                statement = string.Format("Output: {0}", statement.Replace(",",string.Empty).Trim());
             }
+
             Console.Write(statement);
         }
 

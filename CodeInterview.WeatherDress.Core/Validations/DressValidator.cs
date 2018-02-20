@@ -1,4 +1,4 @@
-﻿using System;
+﻿using CodeInterview.WeatherDress.Core.Utils;
 using System.Collections.Generic;
 using CodeInterview.WeatherDress.Core.Rules;
 using CodeInterview.WeatherDress.Core.State;
@@ -15,9 +15,9 @@ namespace CodeInterview.WeatherDress.Core.Validations
             _stateManager = stateManager;
         }
 
-        public bool isValid(DressCommand dressCommand)
+        public bool isValid(Dress dressCommand)
         {
-            IDictionary<DressCommand, bool> rules = _rulesEngine.GetRule(dressCommand);
+            IDictionary<Dress, bool> rules = _rulesEngine.GetRule(dressCommand);
             bool flag = true;
 
             foreach(var rule in rules)

@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using CodeInterview.WeatherDress.Core.Utils;
 
 namespace CodeInterview.WeatherDress.Core.Rules
 {
@@ -20,14 +20,14 @@ namespace CodeInterview.WeatherDress.Core.Rules
         protected internal override void ConfigureRulesForFootwearOn()
         {
             base.ConfigureRulesForFootwearOn();
-            _rulesEngine.AddRule(DressCommand.FootwearOn, new KeyValuePair<DressCommand, bool>(DressCommand.SocksOn, false));
+            _rulesEngine.AddRule(Dress.FootwearOn, new KeyValuePair<Dress, bool>(Dress.SocksOn, false));
         }
 
         protected internal override void ConfigureRulesForLeaveHouse()
         {
             base.ConfigureRulesForLeaveHouse();
-            _rulesEngine.AddRule(DressCommand.LeaveHouse, new KeyValuePair<DressCommand, bool>(DressCommand.JacketOn, false));
-            _rulesEngine.AddRule(DressCommand.LeaveHouse, new KeyValuePair<DressCommand, bool>(DressCommand.SocksOn, false));
+            _rulesEngine.AddRule(Dress.LeaveHouse, new KeyValuePair<Dress, bool>(Dress.JacketOn, false));
+            _rulesEngine.AddRule(Dress.LeaveHouse, new KeyValuePair<Dress, bool>(Dress.SocksOn, false));
         }
 
     }

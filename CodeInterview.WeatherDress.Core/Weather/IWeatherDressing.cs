@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CodeInterview.WeatherDress.Core.WeatherType
+﻿namespace CodeInterview.WeatherDress.Core.Weather
 {
     public interface IWeatherDressing
     {

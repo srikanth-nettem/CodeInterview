@@ -1,19 +1,20 @@
 ﻿using System.Collections.Generic;
+using CodeInterview.WeatherDress.Core.Utils;
 
 namespace CodeInterview.WeatherDress.Core.State
 {
     public class StateManager : IStateManager
     {
-        private DressCommand _currentState;
+        private Dress _currentState;
 
-        private ISet<DressCommand> _visitedStates;
+        private ISet<Dress> _visitedStates;
 
-        private DressCommand _previousState=DressCommand.NULL;
+        private Dress _previousState=Dress.NULL;
         public StateManager()
         {
-            _visitedStates = new HashSet<DressCommand>();
+            _visitedStates = new HashSet<Dress>();
         }
-        public DressCommand CurrentState
+        public Dress CurrentState
         {
             get
             {
@@ -28,7 +29,7 @@ namespace CodeInterview.WeatherDress.Core.State
             }
         }
 
-        public bool isStateVisited(DressCommand instruction)
+        public bool isStateVisited(Dress instruction)
         {
             return _visitedStates.Contains(instruction);
         }

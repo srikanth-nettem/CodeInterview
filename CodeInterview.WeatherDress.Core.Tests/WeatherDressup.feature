@@ -7,7 +7,7 @@
 Scenario: Dress accordingly For Hot Weather
 	Given the weather is "HOT"  
 	When I wear the following in the given order
-	| Dress       |
+	| DressCode     |
 	| Pajamas_Off |
 	| PantsOn     |
 	| ShirtOn     |
@@ -24,7 +24,7 @@ Scenario: Dress accordingly For Hot Weather
 Scenario: Dress accordingly For Cold Weather
 	Given the weather is "COLD"  
 	When I wear the following in the given order
-	| Dress       |
+	| DressCode     |
 	| Pajamas_Off |
 	| PantsOn     |
 	| SocksOn     |
@@ -42,22 +42,20 @@ Scenario: Dress accordingly For Cold Weather
 		And should put on Socks
 
 @integration
-@ignore
 Scenario: Duplicate DressOn is invalid.
 	Given the weather is "HOT"  
 	When I wear the following in the given order
-	| Dress       |
+	| DressCode     |
 	| Pajamas_Off |
 	| PantsOn     |
 	| PantsOn     |
 	Then the dressing should fail
 
 @integration
-@ignore
 Scenario: Dress with Socks in Hot Weather is invalid.
 	Given the weather is "HOT"  
 	When I wear the following in the given order
-	| Dress       |
+	| DressCode     |
 	| Pajamas_Off |
 	| PantsOn     |
 	| SocksOn     |
@@ -65,11 +63,10 @@ Scenario: Dress with Socks in Hot Weather is invalid.
 		But the dressing should fail
 
 @integration
-@ignore
 Scenario: Dress with Jacket in Hot Weather is invalid.
 	Given the weather is "HOT"  
 	When I wear the following in the given order
-	| Dress       |
+	| DressCode     |
 	| Pajamas_Off |
 	| PantsOn     |
 	| ShirtOn     |
@@ -78,16 +75,15 @@ Scenario: Dress with Jacket in Hot Weather is invalid.
 	| FootwearOn  |
 	| LeaveHouse  |
 	Then pants I put on should be "shorts"
-		And shirt I put on should be "shirt"
+		And shirt I put on should be "t-shirt"
 		And headwear should be "sun visor"
 		But the dressing should fail
 
 @integration
-@ignore
 Scenario: No Complete Dressing (miss to wear atleast one dressing) is invalid.
 	Given the weather is "COLD"  
 	When I wear the following in the given order
-	| Dress       |
+	| DressCode     |
 	| Pajamas_Off |
 	| PantsOn     |
 	| SocksOn     |
@@ -97,17 +93,16 @@ Scenario: No Complete Dressing (miss to wear atleast one dressing) is invalid.
 	| LeaveHouse  |
 	Then pants I put on should be "pants"
 		And should put on Socks
-		And shirt I put on should be "t-shirt"
+		And shirt I put on should be "shirt"
 		And headwear should be "hat"
 		And should put on Jacket
 		But the dressing should fail
 
 @integration
-@ignore
 Scenario: Dress without PajamasOff is invalid.
 	Given the weather is "HOT"  
 	When I wear the following in the given order
-	| Dress      |
+	| DressCode    |
 	| PantsOn    |
 	| ShirtOn    |
 	| HeadwearOn |

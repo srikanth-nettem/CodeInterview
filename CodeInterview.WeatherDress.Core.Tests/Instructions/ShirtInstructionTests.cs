@@ -1,8 +1,10 @@
 ﻿using Xunit;
 using NSubstitute;
 using CodeInterview.WeatherDress.Core.Instructions;
-using CodeInterview.WeatherDress.Core.WeatherType;
+using CodeInterview.WeatherDress.Core.Weather;
 using CodeInterview.WeatherDress.Core.State;
+using CodeInterview.WeatherDress.Core.Utils;
+using CodeInterview.WeatherDress.Core.Utils;
 
 namespace CodeInterview.WeatherDress.Core.Tests.Instructions
 {
@@ -25,7 +27,7 @@ namespace CodeInterview.WeatherDress.Core.Tests.Instructions
         {
             _shirtInstruction.Execute();
             _weatherMock.Received().PutOnShirt();
-            _stateManager.Received().CurrentState = DressCommand.ShirtOn;
+            _stateManager.Received().CurrentState = Dress.ShirtOn;
         }
     }
 }

@@ -3,12 +3,13 @@ using System;
 using System.Collections.Generic;
 using TechTalk.SpecFlow;
 using Xunit;
-using CodeInterview.WeatherDress.Core.WeatherType;
+using CodeInterview.WeatherDress.Core.Weather;
 using CodeInterview.WeatherDress.Core.Instructions;
 using CodeInterview.WeatherDress.Core.State;
 using CodeInterview.WeatherDress.Core.Rules;
 using CodeInterview.WeatherDress.Core.Validations;
 using CodeInterview.WeatherDress.Core.io;
+using CodeInterview.WeatherDress.Core.Utils;
 
 namespace CodeInterview.WeatherDress.Core.Tests
 {
@@ -32,25 +33,25 @@ namespace CodeInterview.WeatherDress.Core.Tests
             _writerMock = Substitute.For<IWriter>();
             _writerMock.When(writer => writer.Write(Arg.Any<string>())).Do(callinfo =>
             {
-                dressed.Add(callinfo.Arg<string>());
+                dressed.Add(callinfo.Arg<string>().Replace(",", string.Empty).Trim());
             });
             ScenarioContext.Current.Add("DressState", _stateManager);
         }
 
         [Given(@"the weather is ""(.*)""")]
-        public void GivenTheWeatherIs(WeatherEnum weather)
+        public void GivenTheWeatherIs(WeatherType weather)
         {
             dressed = new List<string>();
             Console.WriteLine(dressed.ToArray());
             switch (weather)
             {
-                case WeatherEnum.HOT:
+                case WeatherType.HOT:
                     _rulesEngine.ClearRules();
                     _hotWeatherRules = new HotWeatherRules(_rulesEngine);
                     _hotWeatherRules.ConfigureRules();
                     _weatherType = new HotWeatherDressing(_writerMock, _dressValidator);
                     break;
-                case WeatherEnum.COLD:
+                case WeatherType.COLD:
                     _rulesEngine.ClearRules();
                     _coldWeatherRules = new ColdWeatherRules(_rulesEngine);
                     _coldWeatherRules.ConfigureRules();
@@ -69,7 +70,14 @@ namespace CodeInterview.WeatherDress.Core.Tests
         {
             foreach (var instruction in instructions)
             {
-                instruction.Execute();
+                try
+                {
+                    instruction.Execute();
+                }catch(Exception)
+                {
+                    _writerMock.Write("fail");
+                    break;
+                }
             }
         }
 

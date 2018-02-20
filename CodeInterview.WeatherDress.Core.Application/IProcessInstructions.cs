@@ -1,4 +1,4 @@
-﻿namespace CodeInterview.WeatherDress.Core
+﻿namespace CodeInterview.WeatherDress.Core.Application
 {
     public interface IProcessInstructions
     {

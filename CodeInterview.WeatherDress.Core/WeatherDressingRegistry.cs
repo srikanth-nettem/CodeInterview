@@ -3,7 +3,7 @@ using CodeInterview.WeatherDress.Core.io;
 using CodeInterview.WeatherDress.Core.Rules;
 using CodeInterview.WeatherDress.Core.State;
 using CodeInterview.WeatherDress.Core.Validations;
-using CodeInterview.WeatherDress.Core.WeatherType;
+using CodeInterview.WeatherDress.Core.Weather;
 using StructureMap;
 
 namespace CodeInterview.WeatherDress.Core

@@ -110,8 +110,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WeatherDressup.feature</DependentUpon>
     </Compile>
-    <Compile Include="WeatherType\ColdWeatherTests.cs" />
-    <Compile Include="WeatherType\HotWeatherTests.cs" />
+    <Compile Include="Weather\ColdWeatherTests.cs" />
+    <Compile Include="Weather\HotWeatherTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -4,6 +4,7 @@ using CodeInterview.WeatherDress.Core.Validations;
 using CodeInterview.WeatherDress.Core.Rules;
 using CodeInterview.WeatherDress.Core.State;
 using System.Collections.Generic;
+using CodeInterview.WeatherDress.Core.Utils;
 
 namespace CodeInterview.WeatherDress.Core.Tests.Validations
 {
@@ -17,44 +18,44 @@ namespace CodeInterview.WeatherDress.Core.Tests.Validations
 
         public static IEnumerable<object[]> RulesData1 = new List<object[]>(){
                                                                 new object[] {
-                                                                                new Dictionary<DressCommand, bool>()
+                                                                                new Dictionary<Dress, bool>()
                                                                                 {
-                                                                                    {DressCommand.Pajamas_Off,true },
-                                                                                    {DressCommand.ShirtOn, true }
+                                                                                    {Dress.Pajamas_Off,true },
+                                                                                    {Dress.ShirtOn, true }
                                                                                 },
-                                                                                new {State=DressCommand.Pajamas_Off, flag=true},
-                                                                                new {State=DressCommand.ShirtOn, flag=true}
+                                                                                new {State=Dress.Pajamas_Off, flag=true},
+                                                                                new {State=Dress.ShirtOn, flag=true}
                                                                               },
                                                                 new object[] {
-                                                                                new Dictionary<DressCommand, bool>()
+                                                                                new Dictionary<Dress, bool>()
                                                                                 {
-                                                                                    {DressCommand.Pajamas_Off,true },
-                                                                                    {DressCommand.ShirtOn, false }
+                                                                                    {Dress.Pajamas_Off,true },
+                                                                                    {Dress.ShirtOn, false }
                                                                                 },
-                                                                                new {State=DressCommand.Pajamas_Off, flag=true},
-                                                                                new {State=DressCommand.ShirtOn, flag=false}
+                                                                                new {State=Dress.Pajamas_Off, flag=true},
+                                                                                new {State=Dress.ShirtOn, flag=false}
 
                                                                               }
                                                                             };
 
         public static IEnumerable<object[]> RulesData2 = new List<object[]>(){
                                                                 new object[] {
-                                                                                new Dictionary<DressCommand, bool>()
+                                                                                new Dictionary<Dress, bool>()
                                                                                 {
-                                                                                    {DressCommand.Pajamas_Off,true },
-                                                                                    {DressCommand.ShirtOn, true }
+                                                                                    {Dress.Pajamas_Off,true },
+                                                                                    {Dress.ShirtOn, true }
                                                                                 },
-                                                                                new {State=DressCommand.Pajamas_Off, flag=true},
-                                                                                new {State=DressCommand.ShirtOn, flag=false},
+                                                                                new {State=Dress.Pajamas_Off, flag=true},
+                                                                                new {State=Dress.ShirtOn, flag=false},
                                                                               },
                                                                 new object[] {
-                                                                                new Dictionary<DressCommand, bool>()
+                                                                                new Dictionary<Dress, bool>()
                                                                                 {
-                                                                                    {DressCommand.Pajamas_Off,false },
-                                                                                    {DressCommand.ShirtOn, true }
+                                                                                    {Dress.Pajamas_Off,false },
+                                                                                    {Dress.ShirtOn, true }
                                                                                 },
-                                                                                new {State=DressCommand.Pajamas_Off, flag=false},
-                                                                                new {State=DressCommand.ShirtOn, flag=false}
+                                                                                new {State=Dress.Pajamas_Off, flag=false},
+                                                                                new {State=Dress.ShirtOn, flag=false}
                                                                               }
                                                                             };
 
@@ -67,31 +68,31 @@ namespace CodeInterview.WeatherDress.Core.Tests.Validations
 
         [Theory]
         [MemberData(nameof(RulesData1))]
-        public void ShouldReturnTrueIfRulesAreMet(IDictionary<DressCommand, bool> rules, dynamic state1, dynamic state2)
+        public void ShouldReturnTrueIfRulesAreMet(IDictionary<Dress, bool> rules, dynamic state1, dynamic state2)
         {
             //given
-            _rulesEngine.GetRule(DressCommand.JacketOn).Returns(rules);
+            _rulesEngine.GetRule(Dress.JacketOn).Returns(rules);
             
-            _stateManager.isStateVisited((DressCommand)state1.State).Returns((bool)state1.flag);
-            _stateManager.isStateVisited((DressCommand)state2.State).Returns((bool)state2.flag);
+            _stateManager.isStateVisited((Dress)state1.State).Returns((bool)state1.flag);
+            _stateManager.isStateVisited((Dress)state2.State).Returns((bool)state2.flag);
 
-            Assert.True(_dressValidator.isValid(DressCommand.JacketOn));
+            Assert.True(_dressValidator.isValid(Dress.JacketOn));
         }
 
         [Theory]
         [MemberData(nameof(RulesData2))]
-        public void ShouldReturnFalseIfRulesAreNotMet(IDictionary<DressCommand, bool> rules, dynamic state1, dynamic state2)
+        public void ShouldReturnFalseIfRulesAreNotMet(IDictionary<Dress, bool> rules, dynamic state1, dynamic state2)
         {
             //given
-            _rulesEngine.GetRule(DressCommand.JacketOn).Returns(new Dictionary<DressCommand, bool>()
+            _rulesEngine.GetRule(Dress.JacketOn).Returns(new Dictionary<Dress, bool>()
             {
-                {DressCommand.Pajamas_Off,true },
-                {DressCommand.ShirtOn, true }
+                {Dress.Pajamas_Off,true },
+                {Dress.ShirtOn, true }
             });
-            _stateManager.isStateVisited((DressCommand)state1.State).Returns((bool)state2.flag);
-            _stateManager.isStateVisited((DressCommand)state2.State).Returns((bool)state2.flag);
+            _stateManager.isStateVisited((Dress)state1.State).Returns((bool)state2.flag);
+            _stateManager.isStateVisited((Dress)state2.State).Returns((bool)state2.flag);
 
-            Assert.False(_dressValidator.isValid(DressCommand.JacketOn));
+            Assert.False(_dressValidator.isValid(Dress.JacketOn));
         }
 
     }
