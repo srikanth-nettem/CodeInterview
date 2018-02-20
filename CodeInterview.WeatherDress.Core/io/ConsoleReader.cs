@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CodeInterview.WeatherDress.Core
+namespace CodeInterview.WeatherDress.Core.io
 {
     public class ConsoleReader : IReader
     {

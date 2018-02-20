@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CodeInterview.WeatherDress.Core
+namespace CodeInterview.WeatherDress.Core.io
 {
     public class ConsoleWriter : IWriter
     {
