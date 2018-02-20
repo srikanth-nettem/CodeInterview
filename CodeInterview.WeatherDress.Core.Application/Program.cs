@@ -32,7 +32,7 @@ namespace CodeInterview.WeatherDress.Core.Application
                     break;
                 }
 
-                processor.Execute(string.Concat(instructionsValue,Constants.SPACE_CHAR));
+                processor.Execute(string.Concat(instructionsValue.Trim(),Constants.SPACE_CHAR));
             }
         }
     }

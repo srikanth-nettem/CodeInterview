@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.travis.yml = .travis.yml
 		Exercise.pdf = Exercise.pdf
 		README.md = README.md
+		WeatherDressingApplication.jpg = WeatherDressingApplication.jpg
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeInterview.WeatherDress.Core.Tests", "CodeInterview.WeatherDress.Core.Tests\CodeInterview.WeatherDress.Core.Tests.csproj", "{17BD04E4-011A-4C41-B004-C5761DF8976B}"
