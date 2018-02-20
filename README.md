@@ -30,3 +30,18 @@ Following instructions should help in using the application without Visual Studi
 * Download WeatherDressing.zip v1.0.0 or above.
 * Extract the zip file.
 * Double Clik or run the **CodeInterview.WeatherDress.Core.Application.exe**
+
+## How to use the application.
+Assuming the console application is open. One should see the application as shown below:
+### Weather Dressing Application:
+![Weather Dressing Application](https://github.com/srikanth-nettem/CodeInterview/blob/master/WeatherDressingApplication.jpg "Weather Dressing Application")
+
+* At any given time, when asked for your instruction type **q** and press enter key to exit from the application.
+* Play with the application against the [Instructions](https://github.com/srikanth-nettem/CodeInterview/blob/master/Exercise.pdf) given.
+* Following are the few instructions for handy purpose:
+  * HOT 8, 6, 4, 2, 1, 7
+  * COLD 8, 6, 3, 4, 2, 5, 1, 7
+  * HOT 8, 6, 6
+  * HOT 8, 6, 3
+  * COLD 8, 6, 3, 4, 2, 5, 7
+  * COLD 6
