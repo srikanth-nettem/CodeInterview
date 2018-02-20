@@ -15,7 +15,7 @@ Scenario: Dress accordingly For Hot Weather
 	| FootwearOn  |
 	| LeaveHouse  |
 	Then I can leave house
-		But shirt I put on should be "shirt"
+		But shirt I put on should be "t-shirt"
 		And pants I put on should be "shorts"
 		And headwear should be "sun visor"
 		And footweear should be "sandals"
@@ -34,7 +34,7 @@ Scenario: Dress accordingly For Cold Weather
 	| FootwearOn  |
 	| LeaveHouse  |
 	Then I can leave house
-		But shirt I put on should be "t-shirt"
+		But shirt I put on should be "shirt"
 		And pants I put on should be "pants"
 		And headwear should be "hat"
 		And footweear should be "boots"

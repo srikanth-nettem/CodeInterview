@@ -20,7 +20,7 @@ namespace CodeInterview.WeatherDress.Core.WeatherType
     {
         if (!_dressValidator.isValid(dressCommand))
         {
-            throw new WeatherDressRuleViolatedException(string.Format("Validation rule failed for {0}", dressCommand));
+            throw new WeatherDressRuleViolatedException(string.Format("Voilated the rule for {0}", dressCommand));
         }
 
         callback();
@@ -33,7 +33,9 @@ namespace CodeInterview.WeatherDress.Core.WeatherType
     public abstract void PutOnSocks();
     public void TakeOffPajamas()
         {
-            _writer.Write("Removing PJs");
+            validateDress(DressCommand.Pajamas_Off,
+            () =>
+            _writer.Write("Removing PJs"));
         }
      public abstract void LeaveHouse();
        }

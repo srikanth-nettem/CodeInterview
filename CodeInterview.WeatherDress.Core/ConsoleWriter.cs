@@ -9,8 +9,11 @@ namespace CodeInterview.WeatherDress.Core
     public class ConsoleWriter : IWriter
     {
         private bool _started;
-        public void Write(string statement)
+
+        public void Write(string statement, ConsoleColor consoleColor=ConsoleColor.Green)
         {
+            Console.ForegroundColor = consoleColor;
+
             if (_started)
             {
                 statement = string.Concat(", ", statement);
@@ -22,8 +25,9 @@ namespace CodeInterview.WeatherDress.Core
             Console.Write(statement);
         }
 
-        public void WriteLine(string statement)
+        public void WriteLine(string statement, ConsoleColor consoleColor = ConsoleColor.Green)
         {
+            Console.ForegroundColor = consoleColor;
             Console.WriteLine(statement);
         }
     }

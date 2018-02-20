@@ -104,7 +104,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 17
  testRunner.Then("I can leave house", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 18
-  testRunner.But("shirt I put on should be \"shirt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
+  testRunner.But("shirt I put on should be \"t-shirt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
 #line 19
   testRunner.And("pants I put on should be \"shorts\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
@@ -151,7 +151,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 36
  testRunner.Then("I can leave house", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 37
-  testRunner.But("shirt I put on should be \"t-shirt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
+  testRunner.But("shirt I put on should be \"shirt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
 #line 38
   testRunner.And("pants I put on should be \"pants\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 39

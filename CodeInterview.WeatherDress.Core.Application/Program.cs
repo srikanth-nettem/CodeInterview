@@ -9,17 +9,16 @@ namespace CodeInterview.WeatherDress.Core.Application
         public static void Main(string[] args)
         {
             IReader reader = new ConsoleReader();
+            IWriter writer = new ConsoleWriter();
+            
             var processor = new InstructionProcessor();
 
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("Welcome to Weather Dressing.");
-
+            writer.WriteLine("WELCOME TO WEATHER DRESSING.", ConsoleColor.White);
+            writer.WriteLine("");
             while (true)
             {
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("1. Provide instructions: Sample - HOT 8, 6, 4, 2, 1, 7");
-                Console.WriteLine("2. Input 'q' to Exit.");
-                Console.ForegroundColor = ConsoleColor.DarkGray;
+                writer.WriteLine("1. Provide instructions: Sample - HOT 8, 6, 4, 2, 1, 7", ConsoleColor.White);
+                writer.WriteLine("2. Input 'q' to Exit.", ConsoleColor.White);
 
                 var instructionsValue = reader.ReadLine();
 

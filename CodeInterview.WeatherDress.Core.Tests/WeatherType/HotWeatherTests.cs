@@ -40,11 +40,11 @@ namespace CodeInterview.WeatherDress.Core.Tests.WeatherType
             Assert.Throws(typeof(NotSupportedDressException), () => _hotWeather.PutOnSocks());
         }
 
-        [Fact(DisplayName = "Should Dress shirt For Shirt Command in Hot Weather.")]
+        [Fact(DisplayName = "Should Dress t-shirt For Shirt Command in Hot Weather.")]
         public void ShouldWearShirtWhenAskedToPutOnShirt()
         {
             _hotWeather.PutOnShirt();
-            _writerMock.Received().Write("shirt");
+            _writerMock.Received().Write("t-shirt");
         }
 
         [Fact(DisplayName = "Should wear sun-visor For Headwear Command in Hot Weather.")]

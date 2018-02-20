@@ -57,11 +57,11 @@ namespace CodeInterview.WeatherDress.Core.Tests.WeatherType
             _writerMock.Received().Write("socks");
         }
 
-        [Fact(DisplayName = "Should Dress t-shirt For Shirt Command in Cold Weather.")]
+        [Fact(DisplayName = "Should Dress shirt For Shirt Command in Cold Weather.")]
         public void ShouldWearShirtWhenAskedToPutOnShirt()
         {
             _coldWeather.PutOnShirt();
-            _writerMock.Received().Write("t-shirt");
+            _writerMock.Received().Write("shirt");
         }
 
         [Fact(DisplayName = "Should wear hat For Headwear Command in Cold Weather.")]

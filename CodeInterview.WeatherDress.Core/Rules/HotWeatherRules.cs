@@ -1,41 +1,34 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace CodeInterview.WeatherDress.Core.Rules
 {
-    public class HotWeatherRules: IWeatherRules
+    public class HotWeatherRules: WeatherRules
     {
-        private IRulesEngine _rulesEngine;
-        public HotWeatherRules(IRulesEngine rulesEngine)
+        public HotWeatherRules(IRulesEngine rulesEngine) : base(rulesEngine) { }
+
+        public override void ConfigureRules()
         {
-            _rulesEngine = rulesEngine;
+            ConfigureRulesForLeaveHouse();
+            ConfigureRulesForShirtOn();
+            ConfigureRulesForHeadwearOn();
+            ConfigureRulesForFootwearOn();
+            ConfigureRulesForPantsOn();
+            ConfigureRulesForPajamasOff();
         }
 
-        public void ConfigureRules()
+        protected internal override void ConfigureRulesForFootwearOn()
         {
-            _rulesEngine.AddRule(DressCommand.LeaveHouse, new KeyValuePair<DressCommand, bool>(DressCommand.Pajamas_Off, true));
-            _rulesEngine.AddRule(DressCommand.LeaveHouse, new KeyValuePair<DressCommand, bool>(DressCommand.PantsOn, true));
-            _rulesEngine.AddRule(DressCommand.LeaveHouse, new KeyValuePair<DressCommand, bool>(DressCommand.ShirtOn, true));
-            _rulesEngine.AddRule(DressCommand.LeaveHouse, new KeyValuePair<DressCommand, bool>(DressCommand.HeadwearOn, true));
-            _rulesEngine.AddRule(DressCommand.LeaveHouse, new KeyValuePair<DressCommand, bool>(DressCommand.FootwearOn, true));
+            base.ConfigureRulesForFootwearOn();
+            _rulesEngine.AddRule(DressCommand.FootwearOn, new KeyValuePair<DressCommand, bool>(DressCommand.SocksOn, false));
+        }
+
+        protected internal override void ConfigureRulesForLeaveHouse()
+        {
+            base.ConfigureRulesForLeaveHouse();
             _rulesEngine.AddRule(DressCommand.LeaveHouse, new KeyValuePair<DressCommand, bool>(DressCommand.JacketOn, false));
             _rulesEngine.AddRule(DressCommand.LeaveHouse, new KeyValuePair<DressCommand, bool>(DressCommand.SocksOn, false));
-
-            _rulesEngine.AddRule(DressCommand.ShirtOn, new KeyValuePair<DressCommand, bool>(DressCommand.Pajamas_Off, true));
-
-            _rulesEngine.AddRule(DressCommand.HeadwearOn, new KeyValuePair<DressCommand, bool>(DressCommand.Pajamas_Off, true));
-            _rulesEngine.AddRule(DressCommand.HeadwearOn, new KeyValuePair<DressCommand, bool>(DressCommand.ShirtOn, true));
-
-            _rulesEngine.AddRule(DressCommand.FootwearOn, new KeyValuePair<DressCommand, bool>(DressCommand.Pajamas_Off, true));
-            _rulesEngine.AddRule(DressCommand.FootwearOn, new KeyValuePair<DressCommand, bool>(DressCommand.PantsOn, true));
-
-            _rulesEngine.AddRule(DressCommand.PantsOn, new KeyValuePair<DressCommand, bool>(DressCommand.Pajamas_Off, true));
-
-            _rulesEngine.AddRule(DressCommand.HeadwearOn, new KeyValuePair<DressCommand, bool>(DressCommand.HeadwearOn, false));
-            _rulesEngine.AddRule(DressCommand.FootwearOn, new KeyValuePair<DressCommand, bool>(DressCommand.FootwearOn, false));
-            _rulesEngine.AddRule(DressCommand.ShirtOn, new KeyValuePair<DressCommand, bool>(DressCommand.ShirtOn, false));
-            _rulesEngine.AddRule(DressCommand.PantsOn, new KeyValuePair<DressCommand, bool>(DressCommand.PantsOn, false));
-            _rulesEngine.AddRule(DressCommand.Pajamas_Off, new KeyValuePair<DressCommand, bool>(DressCommand.Pajamas_Off, false));
-            _rulesEngine.AddRule(DressCommand.LeaveHouse, new KeyValuePair<DressCommand, bool>(DressCommand.LeaveHouse, false));
         }
+
     }
 }

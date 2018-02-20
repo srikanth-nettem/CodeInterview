@@ -14,7 +14,7 @@ namespace CodeInterview.WeatherDress.Core.WeatherType
         public override void PutOnShirt()
         {
             validateDress(DressCommand.ShirtOn, 
-            ()=> _writer.Write("shirt") );
+            ()=> _writer.Write("t-shirt") );
         }
 
         public override void PutOnPants()

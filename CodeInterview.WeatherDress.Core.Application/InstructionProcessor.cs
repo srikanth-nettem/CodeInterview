@@ -27,6 +27,7 @@ namespace CodeInterview.WeatherDress.Core.Application
                 _writer = Application.Container.GetInstance<IWriter>();
                 ExecuteDressInstructions(RetrieveDressInstructions(instruction));
                 CreateSeparator();
+                CreateSeparator();
             }
             catch (InvalidWeatherInstructionException iwie) {
                 WriteException(iwie);
@@ -48,7 +49,6 @@ namespace CodeInterview.WeatherDress.Core.Application
         private void CreateSeparator()
         {
             _writer.WriteLine("");
-            _writer.WriteLine("");
         }
 
         private void ExecuteDressInstructions(List<string>dressInstructionList)
@@ -62,11 +62,9 @@ namespace CodeInterview.WeatherDress.Core.Application
 
         private void WriteException(Exception ex)
         {
-            Console.ForegroundColor = ConsoleColor.Red;
-            _writer.Write("fail");
+            _writer.Write("fail", ConsoleColor.Red);
             _writer.WriteLine("");
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            _writer.WriteLine(String.Format("Reason: {0}", ex.Message));
+            _writer.WriteLine(String.Format("Reason: {0}", ex.Message), ConsoleColor.DarkYellow);
             CreateSeparator();
         }
 

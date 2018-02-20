@@ -6,6 +6,7 @@ namespace CodeInterview.WeatherDress.Core
     {
         public string ReadLine()
         {
+            Console.ForegroundColor = ConsoleColor.Cyan;
             return Console.ReadLine();
         }
     }

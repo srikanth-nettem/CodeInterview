@@ -8,8 +8,8 @@ namespace CodeInterview.WeatherDress.Core
 {
     public interface IWriter
     {
-        void Write(string statement);
+        void Write(string statement, ConsoleColor consoleColor = ConsoleColor.Green);
 
-        void WriteLine(string statement);
+        void WriteLine(string statement, ConsoleColor consoleColor = ConsoleColor.Green);
     }
 }

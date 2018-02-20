@@ -64,6 +64,7 @@
     <Compile Include="IReader.cs" />
     <Compile Include="IWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rules\WeatherRules.cs" />
     <Compile Include="WeatherDressingRegistry.cs" />
     <Compile Include="Rules\ColdWeatherRules.cs" />
     <Compile Include="Rules\HotWeatherRules.cs" />
