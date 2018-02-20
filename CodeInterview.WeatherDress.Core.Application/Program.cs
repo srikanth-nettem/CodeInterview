@@ -1,4 +1,5 @@
 ﻿using CodeInterview.WeatherDress.Core.io;
+using CodeInterview.WeatherDress.Core.Utils;
 using System;
 
 namespace CodeInterview.WeatherDress.Core.Application
@@ -6,7 +7,6 @@ namespace CodeInterview.WeatherDress.Core.Application
     public class Program
     {
 
-        private const char SPACE_VALUE = ' ';
         public static void Main(string[] args)
         {
             IReader reader = new ConsoleReader();
@@ -15,7 +15,7 @@ namespace CodeInterview.WeatherDress.Core.Application
             var processor = new InstructionProcessor();
 
             writer.WriteLine("WELCOME TO WEATHER DRESSING.", ConsoleColor.White);
-            writer.WriteLine("");
+            writer.WriteLine(string.Empty);
 
             writer.WriteLine("Please use the below information to instruct for appropriate dressing", ConsoleColor.DarkGray);
 
@@ -32,7 +32,7 @@ namespace CodeInterview.WeatherDress.Core.Application
                     break;
                 }
 
-                processor.Execute(String.Concat(instructionsValue," "));
+                processor.Execute(string.Concat(instructionsValue,Constants.SPACE_CHAR));
             }
         }
     }

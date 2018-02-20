@@ -103,6 +103,7 @@
     <Compile Include="Rules\HotWeatherRulesTests.cs" />
     <Compile Include="Specflow-StepTransformations\MapTableToDressInstructions.cs" />
     <Compile Include="State\StateManagerTests.cs" />
+    <Compile Include="Utils\ConstantsTests.cs" />
     <Compile Include="Validations\DressValidatorTests.cs" />
     <Compile Include="WeatherDressingSteps.cs" />
     <Compile Include="WeatherDressup.feature.cs">

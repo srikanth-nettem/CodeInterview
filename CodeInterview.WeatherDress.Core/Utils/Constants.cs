@@ -16,5 +16,7 @@
         public static string BOOTS = ", boots";
         public static string FAIL = ", fail";
         public static string INVALID_INSTRUCTION = "Invalid Instruction";
+        public static char SPACE_CHAR = ' ';
+        public static char COMMA = ',';
     }
 }

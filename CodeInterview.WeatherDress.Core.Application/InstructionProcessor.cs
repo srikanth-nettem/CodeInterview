@@ -16,7 +16,7 @@ namespace CodeInterview.WeatherDress.Core.Application
 
         private void SetWeatherInstruction(string instruction)
         {
-            weatherInstruction = instruction.Substring(0, instruction.IndexOf(' ')).Trim().ToUpper();
+            weatherInstruction = instruction.Substring(0, instruction.IndexOf(Constants.SPACE_CHAR)).Trim().ToUpper();
         }
         public void Execute(string instruction)
         {
@@ -65,7 +65,7 @@ namespace CodeInterview.WeatherDress.Core.Application
         private void WriteException(Exception ex)
         {
             _writer.Write(Constants.FAIL, ConsoleColor.Red);
-            _writer.WriteLine("");
+            _writer.WriteLine(string.Empty);
             _writer.WriteLine(String.Format("Reason: {0}", ex.Message), ConsoleColor.DarkYellow);
             CreateSeparator();
         }
@@ -73,7 +73,7 @@ namespace CodeInterview.WeatherDress.Core.Application
         private List<string> RetrieveDressInstructions(string instruction)
         {
             instruction = RemoveWeatherInstruction(instruction);
-            var dressInstructions = instruction.Split(',');
+            var dressInstructions = instruction.Split(Constants.COMMA);
             return new List<string>(dressInstructions);
         }
 
