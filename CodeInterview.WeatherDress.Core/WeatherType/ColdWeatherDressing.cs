@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CodeInterview.WeatherDress.Core.io;
 using CodeInterview.WeatherDress.Core.Validations;
 
 namespace CodeInterview.WeatherDress.Core.WeatherType

@@ -3,6 +3,7 @@ using Xunit;
 using NSubstitute;
 using CodeInterview.WeatherDress.Core.Validations;
 using CodeInterview.WeatherDress.Core.Exceptions;
+using CodeInterview.WeatherDress.Core.io;
 
 namespace CodeInterview.WeatherDress.Core.Tests.WeatherType
 {
