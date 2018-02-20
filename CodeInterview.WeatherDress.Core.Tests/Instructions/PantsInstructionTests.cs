@@ -9,7 +9,7 @@ namespace CodeInterview.WeatherDress.Core.Tests.Instructions
     [Trait("Category", "unit")]
     public class PantsInstructionTests
     {
-        private IInstruction _pantsInstruction;
+        private IDressInstruction _pantsInstruction;
         private readonly IWeatherDressing _weatherMock;
         private readonly IStateManager _stateManager;
 

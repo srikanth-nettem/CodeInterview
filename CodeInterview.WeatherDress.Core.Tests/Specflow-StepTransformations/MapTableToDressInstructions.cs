@@ -15,9 +15,9 @@ namespace Weather.Dress.Core.Tests.StepTransformations
     {
        
         [StepArgumentTransformation]
-        public IEnumerable<IInstruction> Dress(Table dressTable)    
+        public IEnumerable<IDressInstruction> Dress(Table dressTable)    
         {
-            List<IInstruction> dresses = new List<IInstruction>();
+            List<IDressInstruction> dresses = new List<IDressInstruction>();
             IEnumerable<dynamic> dressCommands = dressTable.CreateDynamicSet();
 
             foreach(var dressCommand in dressCommands)
@@ -29,7 +29,7 @@ namespace Weather.Dress.Core.Tests.StepTransformations
             return dresses;
         }
 
-        private IInstruction InstantiateDress(DressCommand dressCommand)
+        private IDressInstruction InstantiateDress(DressCommand dressCommand)
         {
             IStateManager stateManager = (IStateManager)ScenarioContext.Current["DressState"];
             WeatherDressing weatherTypeMock = (WeatherDressing)ScenarioContext.Current["WeatherType"];

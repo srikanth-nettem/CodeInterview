@@ -4,7 +4,7 @@ using CodeInterview.WeatherDress.Core.State;
 
 namespace CodeInterview.WeatherDress.Core.Instructions
 {
-    public class JacketInstruction : IInstruction
+    public class JacketInstruction : IDressInstruction
     {
         private readonly IWeatherDressing _weatherType;
         private readonly IStateManager _stateManager;

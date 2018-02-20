@@ -11,11 +11,12 @@ namespace CodeInterview.WeatherDress.Core.Application
             IReader reader = new ConsoleReader();
             var processor = new InstructionProcessor();
 
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Welcome to Weather Dressing.");
 
             while (true)
             {
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("1. Provide instructions: Sample - HOT 8, 6, 4, 2, 1, 7");
                 Console.WriteLine("2. Input 'q' to Exit.");
                 Console.ForegroundColor = ConsoleColor.DarkGray;
@@ -30,7 +31,6 @@ namespace CodeInterview.WeatherDress.Core.Application
                 Console.ForegroundColor = ConsoleColor.Green;
 
                 processor.Execute(String.Concat(instructionsValue," "));
-                Console.ForegroundColor = ConsoleColor.Blue;
             }
         }
     }

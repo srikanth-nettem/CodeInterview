@@ -17,6 +17,7 @@ namespace CodeInterview.WeatherDress.Core
             }else
             {
                 _started = true;
+                statement = string.Format("Output: {0}", statement);
             }
             Console.Write(statement);
         }

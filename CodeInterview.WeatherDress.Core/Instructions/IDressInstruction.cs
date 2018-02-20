@@ -1,7 +1,7 @@
 ﻿
 namespace CodeInterview.WeatherDress.Core.Instructions
 {
-    public interface IInstruction
+    public interface IDressInstruction
     {
         void Execute();
     }

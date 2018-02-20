@@ -64,7 +64,7 @@ namespace CodeInterview.WeatherDress.Core.Tests
         }
 
         [When(@"I wear the following in the given order")]
-        public void WhenIWearTheFollowing(IEnumerable<IInstruction> instructions)
+        public void WhenIWearTheFollowing(IEnumerable<IDressInstruction> instructions)
         {
             foreach (var instruction in instructions)
             {

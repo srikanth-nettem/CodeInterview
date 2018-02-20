@@ -25,15 +25,8 @@ namespace CodeInterview.WeatherDress.Core.Application
                 SetWeatherInstruction(instruction);
                 Application.Bootstrap(weatherInstruction.ToUpper());
                 _writer = Application.Container.GetInstance<IWriter>();
-                var dressInstructionList = RetrieveDressInstructions(instruction);
-                    
-                foreach (var dressInstruction in dressInstructionList)
-                {
-                    IInstruction dressCommand = Application.Container.GetInstance<IInstruction>(dressInstruction.Trim());
-                    dressCommand.Execute();
-                }
-
-                _writer.WriteLine("");
+                ExecuteDressInstructions(RetrieveDressInstructions(instruction));
+                CreateSeparator();
             }
             catch (InvalidWeatherInstructionException iwie) {
                 WriteException(iwie);
@@ -48,7 +41,22 @@ namespace CodeInterview.WeatherDress.Core.Application
                 WriteException(wdve);
             }
             catch (Exception ex) {
-                WriteException(ex);
+                WriteException(new Exception("Invalid Instruction"));
+            }
+        }
+
+        private void CreateSeparator()
+        {
+            _writer.WriteLine("");
+            _writer.WriteLine("");
+        }
+
+        private void ExecuteDressInstructions(List<string>dressInstructionList)
+        {
+            foreach (var dressInstruction in dressInstructionList)
+            {
+                IDressInstruction dressCommand = Application.Container.GetInstance<IDressInstruction>(dressInstruction.Trim());
+                dressCommand.Execute();
             }
         }
 
@@ -58,7 +66,8 @@ namespace CodeInterview.WeatherDress.Core.Application
             _writer.Write("fail");
             _writer.WriteLine("");
             Console.ForegroundColor = ConsoleColor.Yellow;
-            _writer.WriteLine(ex.Message);
+            _writer.WriteLine(String.Format("Reason: {0}", ex.Message));
+            CreateSeparator();
         }
 
         private List<string> RetrieveDressInstructions(string instruction)

@@ -37,44 +37,44 @@ namespace CodeInterview.WeatherDress.Core
                 .Ctor<IWriter>("writer").Is((config) => config.GetInstance<IWriter>())
                 .Named("COLD");
 
-            For<IInstruction>().Add<PajamasInstruction>()
+            For<IDressInstruction>().Add<PajamasInstruction>()
                 .Ctor<IWeatherDressing>("weatherType").Is(
                 (config) => 
                      config.GetInstance<IWeatherDressing>())
                 .Ctor<IStateManager>("stateManager").Is((config)=>config.GetInstance<IStateManager>())
                 .Named("8");
                 
-            For<IInstruction>().Add<LeaveHouseInstruction>()
+            For<IDressInstruction>().Add<LeaveHouseInstruction>()
                 .Ctor<IWeatherDressing>("weatherType").Is((config) => config.GetInstance<IWeatherDressing>())
                 .Ctor<IStateManager>("stateManager").Is((config) => config.GetInstance<IStateManager>())
                 .Named("7");
 
-            For<IInstruction>().Add<PantsInstruction>()
+            For<IDressInstruction>().Add<PantsInstruction>()
                 .Ctor<IWeatherDressing>("weatherType").Is((config) => config.GetInstance<IWeatherDressing>())
                 .Ctor<IStateManager>("stateManager").Is((config) => config.GetInstance<IStateManager>())
                 .Named("6");
 
-            For<IInstruction>().Add<ShirtInstruction>()
+            For<IDressInstruction>().Add<ShirtInstruction>()
                 .Ctor<IWeatherDressing>("weatherType").Is((config) => config.GetInstance<IWeatherDressing>())
                 .Ctor<IStateManager>("stateManager").Is((config) => config.GetInstance<IStateManager>())
                 .Named("4");
 
-            For<IInstruction>().Add<SocksInstruction>()
+            For<IDressInstruction>().Add<SocksInstruction>()
                 .Ctor<IWeatherDressing>("weatherType").Is((config) => config.GetInstance<IWeatherDressing>())
                 .Ctor<IStateManager>("stateManager").Is((config) => config.GetInstance<IStateManager>())
                 .Named("3");
 
-            For<IInstruction>().Add<HeadwearInstruction>()
+            For<IDressInstruction>().Add<HeadwearInstruction>()
                 .Ctor<IWeatherDressing>("weatherType").Is((config) => config.GetInstance<IWeatherDressing>())
                 .Ctor<IStateManager>("stateManager").Is((config) => config.GetInstance<IStateManager>())
                 .Named("2");
 
-            For<IInstruction>().Add<FootwearInstruction>()
+            For<IDressInstruction>().Add<FootwearInstruction>()
                 .Ctor<IWeatherDressing>("weatherType").Is((config) => config.GetInstance<IWeatherDressing>())
                 .Ctor<IStateManager>("stateManager").Is((config) => config.GetInstance<IStateManager>())
                 .Named("1");
 
-            For<IInstruction>().Add<JacketInstruction>()
+            For<IDressInstruction>().Add<JacketInstruction>()
                 .Ctor<IWeatherDressing>("weatherType").Is((config) => config.GetInstance<IWeatherDressing>())
                 .Ctor<IStateManager>("stateManager").Is((config) => config.GetInstance<IStateManager>())
                 .Named("5");

@@ -53,7 +53,7 @@
     <Compile Include="Exceptions\WeatherDressRuleViolatedException.cs" />
     <Compile Include="Instructions\FootwearInstruction.cs" />
     <Compile Include="Instructions\HeadwearInstruction.cs" />
-    <Compile Include="Instructions\IInstruction.cs" />
+    <Compile Include="Instructions\IDressInstruction.cs" />
     <Compile Include="Instructions\JacketInstruction.cs" />
     <Compile Include="Instructions\LeaveHouseInstruction.cs" />
     <Compile Include="Instructions\PajamasInstruction.cs" />
