@@ -21,7 +21,7 @@ namespace CodeInterview.WeatherDress.Core.Application
 
             while (true)
             {
-                writer.WriteLine("a) Provide instructions in the format - WEATHER DRESS-COMMANDS-COMMA-SEPERATED", ConsoleColor.White);
+                writer.WriteLine("a) Provide instructions in the format: WEATHER DRESS-COMMANDS(comma separated)", ConsoleColor.White);
                 writer.WriteLine("   Sample: HOT 8, 6, 4, 2, 1, 7", ConsoleColor.White);
                 writer.WriteLine("b) Enter 'q' to Exit.", ConsoleColor.White);
 
