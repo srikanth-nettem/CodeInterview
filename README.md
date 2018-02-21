@@ -1,10 +1,10 @@
 # CodeInterview
-This repository has the implementation for a [Code Interview](https://github.com/srikanth-nettem/CodeInterview/blob/master/Exercise.pdf) problem.
+This repository has implementation for a [Code Interview](https://github.com/srikanth-nettem/CodeInterview/blob/master/Exercise.pdf) problem.
 
 This repository used travis ci for setting up Continous Integration. Please visit [here](https://travis-ci.org/srikanth-nettem/CodeInterview/builds) for build history.
 
 ## System Requirements
-The application executed well in the environment that meets the following requirements:
+The application executes well in the environment that meets the following requirements:
 * Operation System: **Windows 10 or later.**
 * Framework: **.Net Framework 1.5.2 or later.**
 * IDE: **Visual Studio 2015 or later.**
@@ -17,7 +17,7 @@ The following instructions enables the user to install the extension for VS2015.
 **Please Note**: You may have to restart your IDE after installation.
 
 ## Clone the repository
-Use the following command to clone the repository to run locally.
+Use the following steps to clone the repository and execute the application locally.
 * Clone the repository using git clone https://github.com/srikanth-nettem/CodeInterview.git
 * Use Visual Studio IDE to open the solution file.
 * Restore the nuget packages.
