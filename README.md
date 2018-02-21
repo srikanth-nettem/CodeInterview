@@ -7,7 +7,7 @@ This repository uses travis-ci for setting up remote build. Please visit [here](
 ## System Requirements
 The application executes well in the environment that meets the following requirements:
 * Operation System: **Windows 10 or later.**
-* Framework: **.Net Framework 1.5.2 or later.**
+* Framework: **.Net Framework 4.5.2 or later.**
 * IDE: **Visual Studio 2015 or later.**
 * GIT
 
