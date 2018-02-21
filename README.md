@@ -1,8 +1,8 @@
 # CodeInterview
 This repository has implementation for a [Code Interview](https://github.com/srikanth-nettem/CodeInterview/blob/master/Exercise.pdf) problem.
 
-This repository used travis-ci for setting up remote build. Please visit [here](https://travis-ci.org/srikanth-nettem/CodeInterview/builds) for build history.
 ![Build Status](https://travis-ci.org/srikanth-nettem/CodeInterview.svg?branch=master "Build Status")
+This repository uses travis-ci for setting up remote build. Please visit [here](https://travis-ci.org/srikanth-nettem/CodeInterview/builds) for build history.
 
 ## System Requirements
 The application executes well in the environment that meets the following requirements:
