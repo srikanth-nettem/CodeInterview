@@ -23,13 +23,13 @@ namespace CodeInterview.WeatherDress.Core.Rules
         }
 
 
-        protected internal override void ConfigureRulesForFootwearOn()
+        protected override void ConfigureRulesForFootwearOn()
         {
             base.ConfigureRulesForFootwearOn();
             _rulesEngine.AddRule(Dress.FootwearOn, new KeyValuePair<Dress, bool>(Dress.SocksOn, true));
         }
 
-        protected internal override void ConfigureRulesForLeaveHouse()
+        protected override void ConfigureRulesForLeaveHouse()
         {
             base.ConfigureRulesForLeaveHouse();
             _rulesEngine.AddRule(Dress.LeaveHouse, new KeyValuePair<Dress, bool>(Dress.JacketOn, true));
