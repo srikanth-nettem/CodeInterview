@@ -4,7 +4,6 @@ using CodeInterview.WeatherDress.Core.Instructions;
 using CodeInterview.WeatherDress.Core.Weather;
 using CodeInterview.WeatherDress.Core.State;
 using CodeInterview.WeatherDress.Core.Utils;
-using CodeInterview.WeatherDress.Core.Utils;
 
 namespace CodeInterview.WeatherDress.Core.Tests.Instructions
 {

@@ -43,7 +43,7 @@ namespace CodeInterview.WeatherDress.Core.Application
             catch (WeatherDressRuleViolatedException wdve) {
                 WriteException(wdve);
             }
-            catch (Exception ex) {
+            catch (Exception) {
                 WriteException(new Exception(Constants.INVALID_INSTRUCTION));
             }
         }
